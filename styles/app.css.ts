@@ -25,5 +25,5 @@ globalStyle("body", {
   WebkitFontSmoothing: "antialiased",
   MozOsxFontSmoothing: "grayscale",
   textRendering: "optimizeLegibility",
-  fontFamily: tokens.font.mono,
+  fontFamily: tokens.font.sans,
 });

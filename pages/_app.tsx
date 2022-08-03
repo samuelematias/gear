@@ -1,3 +1,4 @@
+import "the-new-css-reset";
 import "@/styles/app.css";
 import type { AppProps } from "next/app";
 
