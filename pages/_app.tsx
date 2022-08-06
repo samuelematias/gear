@@ -1,16 +1,17 @@
 import "the-new-css-reset";
 import "@/styles/app.css";
 import type { AppProps } from "next/app";
+import { Banner } from "@/components/Banner";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <header>
-        <h1>Alex Carpenter</h1>
-        <p>Serial hobbyist</p>
-      </header>
-      <Component {...pageProps} />
-    </>
+    <div className="container">
+      <Banner />
+      <main>
+        <Component {...pageProps} />
+      </main>
+      <footer></footer>
+    </div>
   );
 }
 
