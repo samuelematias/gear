@@ -30,7 +30,7 @@ const Home: NextPage<{
         {posts.map((post, idx) => (
           <li key={idx}>
             <h3>
-              <NextLink href={post.slug}>
+              <NextLink href={`/posts/${post.slug}`}>
                 <a>{post.title}</a>
               </NextLink>
             </h3>

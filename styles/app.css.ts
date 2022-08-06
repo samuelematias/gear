@@ -34,5 +34,5 @@ globalStyle("time", {
 
 globalStyle(".container", {
   marginInline: "auto",
-  maxWidth: "50rem",
+  maxWidth: "48rem",
 });

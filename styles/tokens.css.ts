@@ -17,6 +17,7 @@ export const tokens = createGlobalTheme(":root", {
     sm: "0.875rem",
     md: "1rem",
     lg: "1.125rem",
+    xl: "1.25rem",
   },
   spacing: {
     none: "0",
