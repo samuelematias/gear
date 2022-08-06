@@ -1,19 +1,19 @@
-import { sage, sageDark, grass, grassDark } from "@radix-ui/colors";
 import { createGlobalTheme } from "@vanilla-extract/css";
 
 export const tokens = createGlobalTheme(":root", {
   font: {
-    sans: "'Inter', -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif",
-    mono: "'JetBrains Mono Web', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace",
+    sans: "'Inter', sans-serif",
+    serif: "'Newsreader', serif",
+    mono: "'JetBrains Mono', monospace",
   },
-  color: {
-    light: {
-      ...sage,
-      ...grass,
-    },
-    dark: {
-      ...sageDark,
-      ...grassDark,
-    },
+  color: {},
+  spacing: {
+    none: "0",
+    xs: "0.2rem",
+    sm: "0.5rem",
+    md: "1rem",
+    lg: "2rem",
+    xl: "3rem",
+    xxl: "4rem",
   },
 });

@@ -3,11 +3,11 @@ import type { NextPage } from "next";
 const Home: NextPage = () => {
   return (
     <>
-      <h1>Hello world</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat sequi,
-        aliquid, amet quae aliquam aut voluptate ullam dolor ex laboriosam nihil
-        maiores velit placeat quod, minima totam ipsam. Nesciunt, voluptates?
+        Lorem ipsum <a href="">dolor sit amet consectetur</a> adipisicing elit.
+        Quaerat sequi, aliquid, amet quae aliquam aut voluptate ullam dolor ex
+        laboriosam nihil maiores velit placeat quod, minima totam ipsam.
+        Nesciunt, voluptates?
       </p>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore
