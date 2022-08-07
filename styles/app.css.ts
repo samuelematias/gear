@@ -60,5 +60,5 @@ globalStyle("time", {
 
 globalStyle(".container", {
   marginInline: "auto",
-  maxWidth: "48rem",
+  maxWidth: tokens.maxWidth.md,
 });

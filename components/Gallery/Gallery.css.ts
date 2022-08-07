@@ -9,7 +9,6 @@ export const root = style({
   right: "50%",
   marginLeft: "-50vw",
   marginRight: "-50vw",
-  // paddingBlock: tokens.spacing.md,
   overflowX: "scroll",
   overscrollBehaviorX: "contain",
   scrollSnapType: "x proximity",
@@ -17,7 +16,7 @@ export const root = style({
   display: "grid",
   gridTemplateColumns: `[full-start] 1fr
     [content-start]
-    min(48rem, 100% - ${tokens.spacing.md} * 2)
+    min(${tokens.maxWidth.md}, 100% - ${tokens.spacing.md} * 2)
     [content-end]
     1fr [full-end]`,
 
@@ -36,7 +35,7 @@ export const inner = style({
   "::after": {
     content: "",
     alignSelf: "stretch",
-    paddingInlineEnd: `max(${tokens.spacing.md}, (100vw - 48rem) / 2 - ${tokens.spacing.md})`,
+    paddingInlineEnd: `max(${tokens.spacing.md}, (100vw - ${tokens.maxWidth.md}) / 2 - ${tokens.spacing.md})`,
   },
 });
 
@@ -47,7 +46,7 @@ export const item = style({
   justifyContent: "center",
   scrollSnapAlign: "center",
   inlineSize: "100%",
-  maxInlineSize: "48rem",
+  maxInlineSize: tokens.maxWidth.md,
   overflow: "hidden",
 });
 
