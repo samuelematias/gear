@@ -3,14 +3,33 @@ import { themeVars } from "@/styles/theme.css";
 import { style } from "@vanilla-extract/css";
 
 export const root = style({
+  position: "fixed",
+  top: 0,
+  left: 0,
+  zIndex: 1,
   width: "100%",
-  maxWidth: tokens.maxWidth.md,
-  marginInline: "auto",
-  paddingBlock: tokens.spacing.xl,
+  height: "3rem",
+  backgroundColor: "rgba(243, 242, 243, 0.75)",
+  padding: tokens.spacing.md,
+  backdropFilter: "blur(10px)",
+  display: "flex",
+  alignItems: "center",
+  gap: tokens.spacing.md,
+  "@media": {
+    "screen and (min-width: 960px)": {
+      writingMode: "vertical-rl",
+      width: "3rem",
+      height: "100%",
+    },
+  },
 });
 
 export const anchor = style({
-  fontVariationSettings: "'wght' 500",
+  display: "block",
+  width: "1.5rem",
+  height: "1.5rem",
+  backgroundColor: "#f30",
+  borderRadius: "9999px",
 });
 
 export const description = style({

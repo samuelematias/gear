@@ -1,4 +1,5 @@
 import { globalFontFace, globalStyle } from "@vanilla-extract/css";
+import { calc } from "@vanilla-extract/css-utils";
 import { tokens } from "./tokens.css";
 import { themeVars } from "./theme.css";
 
@@ -21,11 +22,11 @@ globalStyle("body, #__next, .container", {
 });
 
 globalStyle("body", {
+  overflowX: "hidden",
   WebkitFontSmoothing: "antialiased",
   MozOsxFontSmoothing: "grayscale",
   textRendering: "optimizeLegibility",
-  paddingRight: tokens.spacing.md,
-  paddingLeft: tokens.spacing.md,
+  paddingInline: tokens.spacing.md,
   fontFamily: tokens.font.sans,
   backgroundColor: themeVars.color.page,
   color: themeVars.color.foreground,
@@ -36,6 +37,12 @@ globalStyle("main", {
   marginBottom: "auto",
   width: "100%",
   maxWidth: tokens.maxWidth.md,
+  paddingBlockStart: calc.add(tokens.spacing.md, "3rem"),
+  "@media": {
+    "screen and (min-width: 960px)": {
+      paddingBlockStart: tokens.spacing.md,
+    },
+  },
 });
 
 globalStyle("a:not([class])", {
