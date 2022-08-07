@@ -8,6 +8,6 @@ export const root = style({
 
 export const description = style({
   fontFamily: tokens.font.mono,
-  fontSize: tokens.fontSize.sm,
+  // fontSize: tokens.fontSize.sm,
   color: themeVars.color.foregroundSecondary,
 });

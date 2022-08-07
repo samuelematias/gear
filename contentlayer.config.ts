@@ -29,13 +29,16 @@ export const Post = defineDocumentType(() => ({
       type: "date",
       required: true,
     },
+    gallery: {
+      type: "list",
+      of: Image,
+      required: false,
+    },
   },
   computedFields: {
     slug: {
       type: "string",
-      resolve: (post: any) =>
-        console.log(post._raw.sourceFileName) ||
-        post._raw.sourceFileName.replace(/\.mdx$/, ""),
+      resolve: (post: any) => post._raw.sourceFileName.replace(/\.mdx$/, ""),
     },
   },
 }));

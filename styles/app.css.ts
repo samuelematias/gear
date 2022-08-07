@@ -26,9 +26,16 @@ globalStyle("a:not([class])", {
   textDecorationThickness: 2,
 });
 
+globalStyle("a:focus-visible", {
+  outlineWidth: "2px",
+  outlineStyle: "solid",
+  outlineOffset: "2px",
+  outlineColor: "#3e91f7",
+});
+
 globalStyle("time", {
   fontFamily: tokens.font.mono,
-  fontSize: tokens.fontSize.sm,
+  // fontSize: tokens.fontSize.sm,
   color: themeVars.color.foregroundSecondary,
 });
 

@@ -4,6 +4,7 @@ import { allPosts, Post } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 // import { Components } from "@/components/MDXComponents";
 import { Heading } from "@/components/Heading";
+import { Gallery } from "@/components/Gallery";
 import { Prose } from "@/components/Prose";
 import { Spacer } from "@/components/Spacer";
 
@@ -39,6 +40,12 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
           {format(parseISO(post.date), "LLLL d, yyyy")}
         </time>
         <Spacer height="lg" />
+        {post.gallery ? (
+          <>
+            <Gallery images={post.gallery} />
+            <Spacer height="lg" />
+          </>
+        ) : null}
         <Prose>
           <MDXContent components={{}} />
         </Prose>

@@ -5,6 +5,7 @@ import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, allLinks } from "contentlayer/generated";
 import { Box } from "@/components/Box";
 import { Spacer } from "@/components/Spacer";
+import { NumberedList } from "@/components/NumberedList";
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
@@ -47,18 +48,18 @@ const Home: NextPage<{
 
       <Spacer height="md" />
 
-      <ul>
+      <NumberedList>
         {links.map((link, idx) => (
-          <li key={idx}>
+          <div key={idx}>
             <h3>
               <a href={link.link}>{link.title}</a>
             </h3>
             <time dateTime={link.date}>
               {format(parseISO(link.date), "LLL d, Y")}
             </time>
-          </li>
+          </div>
         ))}
-      </ul>
+      </NumberedList>
     </>
   );
 };
