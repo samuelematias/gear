@@ -22,17 +22,28 @@ globalStyle("html", {
   WebkitTextSizeAdjust: "100%",
 });
 
+globalStyle("body, #__next, .container", {
+  display: "flex",
+  flexDirection: "column",
+  minHeight: "100vh",
+});
+
 globalStyle("body", {
   WebkitFontSmoothing: "antialiased",
   MozOsxFontSmoothing: "grayscale",
   textRendering: "optimizeLegibility",
-  paddingTop: tokens.spacing.xl,
   paddingRight: tokens.spacing.md,
-  paddingBottom: tokens.spacing.xl,
   paddingLeft: tokens.spacing.md,
   fontFamily: tokens.font.sans,
   backgroundColor: themeVars.color.page,
   color: themeVars.color.foreground,
+});
+
+globalStyle("main", {
+  marginInline: "auto",
+  marginBottom: "auto",
+  width: "100%",
+  maxWidth: tokens.maxWidth.md,
 });
 
 globalStyle("a:not([class])", {
@@ -54,11 +65,5 @@ globalStyle("a:focus-visible", {
 
 globalStyle("time", {
   fontFamily: tokens.font.mono,
-  // fontSize: tokens.fontSize.sm,
   color: themeVars.color.foregroundSecondary,
-});
-
-globalStyle(".container", {
-  marginInline: "auto",
-  maxWidth: tokens.maxWidth.md,
 });

@@ -8,5 +8,6 @@ export const themeVars = createGlobalTheme(":root", {
     foregroundSecondary: tokens.color.light.sand11,
     underline: tokens.color.light.sand8,
     underlineHover: tokens.color.light.sand11,
+    border: tokens.color.light.sand8,
   },
 });

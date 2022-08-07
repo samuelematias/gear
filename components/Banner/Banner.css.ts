@@ -3,11 +3,13 @@ import { themeVars } from "@/styles/theme.css";
 import { style } from "@vanilla-extract/css";
 
 export const root = style({
-  marginBottom: tokens.spacing.xl,
+  width: "100%",
+  maxWidth: tokens.maxWidth.md,
+  marginInline: "auto",
+  paddingBlock: tokens.spacing.xl,
 });
 
 export const description = style({
   fontFamily: tokens.font.mono,
-  // fontSize: tokens.fontSize.sm,
   color: themeVars.color.foregroundSecondary,
 });
