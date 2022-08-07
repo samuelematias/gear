@@ -9,7 +9,10 @@ export const root = style({
   paddingBlock: tokens.spacing.xl,
 });
 
+export const anchor = style({
+  fontVariationSettings: "'wght' 500",
+});
+
 export const description = style({
-  fontFamily: tokens.font.mono,
   color: themeVars.color.foregroundSecondary,
 });

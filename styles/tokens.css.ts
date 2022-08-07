@@ -3,8 +3,7 @@ import { createGlobalTheme } from "@vanilla-extract/css";
 
 export const tokens = createGlobalTheme(":root", {
   font: {
-    sans: "'Inter', sans-serif",
-    mono: "'JetBrains Mono', monospace",
+    sans: "'Inter var', sans-serif",
   },
   color: {
     light: {

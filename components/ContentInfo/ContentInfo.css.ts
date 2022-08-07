@@ -9,11 +9,9 @@ export const root = style({
   width: "100%",
   maxWidth: tokens.maxWidth.md,
   marginInline: "auto",
-  marginTop: tokens.spacing.xxl,
-  paddingBlockStart: tokens.spacing.lg,
-  paddingBlockEnd: tokens.spacing.xxl,
-  borderTop: "2px solid",
-  borderColor: themeVars.color.border,
+  paddingBlock: tokens.spacing.xxl,
+  // paddingBlockStart: tokens.spacing.lg,
+  // paddingBlockEnd: tokens.spacing.xxl,
 });
 
 export const list = style({
@@ -22,6 +20,5 @@ export const list = style({
 });
 
 export const copy = style({
-  fontFamily: tokens.font.mono,
   color: themeVars.color.foregroundSecondary,
 });

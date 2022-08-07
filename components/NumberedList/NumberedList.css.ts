@@ -15,7 +15,6 @@ export const item = style({
   "::before": {
     counterIncrement: "li",
     content: "counter(li, decimal-leading-zero)",
-    fontFamily: tokens.font.mono,
     color: themeVars.color.foregroundSecondary,
   },
 });

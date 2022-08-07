@@ -56,7 +56,6 @@ export const note = style({
   justifyContent: "center",
   paddingTop: tokens.spacing.md,
   textAlign: "center",
-  fontFamily: tokens.font.mono,
   color: themeVars.color.foregroundSecondary,
   gap: tokens.spacing.xs,
 });

@@ -6,7 +6,7 @@ export const Banner = () => {
     <header className={styles.root}>
       <h1>
         <Link href="/">
-          <a className="anchor">Alex Carpenter</a>
+          <a className={styles.anchor}>Alex Carpenter</a>
         </Link>
       </h1>
       <p className={styles.description}>

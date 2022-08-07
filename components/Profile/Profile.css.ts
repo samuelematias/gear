@@ -36,8 +36,8 @@ export const metaRow = style({
 
 export const metaTitle = style({
   position: "relative",
-  fontFamily: tokens.font.mono,
-  color: themeVars.color.foregroundSecondary,
+  // color: themeVars.color.foregroundSecondary,
+  fontVariationSettings: "'wght' 500",
 });
 
 export const metaDescription = style({

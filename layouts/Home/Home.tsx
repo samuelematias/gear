@@ -1,13 +1,11 @@
 import type { NextPage } from "next";
 import type { Post, Link } from "contentlayer/generated";
 import NextLink from "next/link";
-import Image from "next/image";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, allLinks } from "contentlayer/generated";
 import { Spacer } from "@/components/Spacer";
-import { NumberedList } from "@/components/NumberedList";
 import { Heading } from "@/components/Heading";
-import * as styles from "./Home.css";
+// import * as styles from "./Home.css";
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
@@ -52,18 +50,20 @@ export const Home: NextPage<{
 
       <Spacer height="md" />
 
-      <NumberedList>
+      <ul>
         {links.map((link, idx) => (
-          <div key={idx}>
+          <li key={idx}>
             <h3>
               <a href={link.link}>{link.title}</a>
+              {"\u00A0"}
+              <span aria-hidden="true">↗</span>
             </h3>
             <time dateTime={link.date}>
               {format(parseISO(link.date), "LLL d, Y")}
             </time>
-          </div>
+          </li>
         ))}
-      </NumberedList>
+      </ul>
     </>
   );
 };
