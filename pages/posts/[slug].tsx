@@ -1,8 +1,9 @@
 import { NextPage } from "next/types";
+import Head from "next/head";
 import { format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
-// import { Components } from "@/components/MDXComponents";
+import { components } from "@/components/MDXComponents";
 import { Heading } from "@/components/Heading";
 import { Gallery } from "@/components/Gallery";
 import { Prose } from "@/components/Prose";
@@ -34,6 +35,9 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
   const MDXContent = useMDXComponent(post.body.code);
   return (
     <>
+      <Head>
+        <title>{post.title}</title>
+      </Head>
       <article>
         <Heading size="xl">{post.title}</Heading>
         <time dateTime={post.date}>
@@ -47,7 +51,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
           </>
         ) : null}
         <Prose>
-          <MDXContent components={{}} />
+          <MDXContent components={components} />
         </Prose>
       </article>
     </>

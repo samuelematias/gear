@@ -6,6 +6,10 @@ globalStyle(".prose > * + *", {
   marginTop: tokens.spacing.md,
 });
 
+globalStyle(".prose > * + h2", {
+  marginTop: tokens.spacing.lg,
+});
+
 globalStyle(".prose > h2", {
   fontSize: tokens.fontSize.lg,
 });

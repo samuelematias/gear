@@ -26,6 +26,10 @@ globalStyle("a:not([class])", {
   textDecorationThickness: 2,
 });
 
+globalStyle("a:not([class]):hover", {
+  textDecorationColor: themeVars.color.underlineHover,
+});
+
 globalStyle("a:focus-visible", {
   outlineWidth: "2px",
   outlineStyle: "solid",
