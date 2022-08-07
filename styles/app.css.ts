@@ -54,6 +54,11 @@ globalStyle("a:focus-visible", {
   outlineColor: "#3e91f7",
 });
 
+globalStyle("ul:not([class])", {
+  display: "grid",
+  rowGap: tokens.spacing.sm,
+});
+
 globalStyle("time", {
   color: themeVars.color.foregroundSecondary,
 });
