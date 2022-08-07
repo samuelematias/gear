@@ -17,7 +17,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link
-            href="https://fonts.googleapis.com/css2?family=Inter&family=JetBrains+Mono&family=Newsreader:opsz@6..72&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter&family=JetBrains+Mono&display=swap"
             rel="stylesheet"
           />
         </Head>
