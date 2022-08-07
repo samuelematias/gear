@@ -1,3 +1,4 @@
+import { themeVars } from "@/styles/theme.css";
 import { tokens } from "@/styles/tokens.css";
 import { style } from "@vanilla-extract/css";
 
@@ -48,4 +49,15 @@ export const item = style({
   inlineSize: "100%",
   maxInlineSize: "48rem",
   overflow: "hidden",
+});
+
+export const note = style({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  paddingTop: tokens.spacing.md,
+  textAlign: "center",
+  fontFamily: tokens.font.mono,
+  color: themeVars.color.foregroundSecondary,
+  gap: tokens.spacing.xs,
 });
