@@ -16,7 +16,8 @@ export const root = style({
 
 export const avatar = style({
   float: "right",
-  maxWidth: 200,
+  width: 200,
+  maxWidth: "30%",
   marginLeft: tokens.spacing.lg,
   marginBottom: tokens.spacing.lg,
 });

@@ -3,9 +3,9 @@ import type { Post, Link } from "contentlayer/generated";
 import NextLink from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, allLinks } from "contentlayer/generated";
-import { Box } from "@/components/Box";
 import { Spacer } from "@/components/Spacer";
 import { NumberedList } from "@/components/NumberedList";
+import { Heading } from "@/components/Heading";
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
@@ -23,7 +23,7 @@ const Home: NextPage<{
 }> = ({ posts, links }) => {
   return (
     <>
-      <h2>Latest posts</h2>
+      <Heading size="lg">Latest posts</Heading>
 
       <Spacer height="md" />
 
@@ -44,7 +44,7 @@ const Home: NextPage<{
 
       <Spacer height="xl" />
 
-      <h2>Link feed</h2>
+      <Heading size="lg">Link feed</Heading>
 
       <Spacer height="md" />
 
