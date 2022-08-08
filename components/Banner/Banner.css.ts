@@ -3,12 +3,10 @@ import { themeVars } from "@/styles/theme.css";
 import { style } from "@vanilla-extract/css";
 
 export const root = style({
-  position: "fixed",
+  position: "sticky",
   top: 0,
-  left: 0,
   zIndex: 1,
   width: "100%",
-  height: "3rem",
   backgroundColor: "rgba(243, 242, 243, 0.75)",
   padding: tokens.spacing.md,
   backdropFilter: "blur(10px)",
@@ -18,6 +16,8 @@ export const root = style({
   "@media": {
     "screen and (min-width: 960px)": {
       writingMode: "vertical-rl",
+      left: 0,
+      position: "fixed",
       width: "3rem",
       height: "100%",
     },

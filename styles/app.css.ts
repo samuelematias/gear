@@ -37,7 +37,6 @@ globalStyle("main", {
   marginBottom: "auto",
   width: "100%",
   maxWidth: tokens.maxWidth.md,
-  paddingBlockStart: calc.add(tokens.spacing.md, "3rem"),
   "@media": {
     "screen and (min-width: 960px)": {
       paddingBlockStart: tokens.spacing.md,
