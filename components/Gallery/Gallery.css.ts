@@ -16,7 +16,7 @@ export const root = style({
   display: "grid",
   gridTemplateColumns: `[full-start] 1fr
     [content-start]
-    min(${tokens.maxWidth.md}, 100% - ${tokens.spacing.md} * 2)
+    min(${tokens.maxWidth.md}, 100% - ${tokens.spacing.xl})
     [content-end]
     1fr [full-end]`,
 
@@ -58,4 +58,22 @@ export const note = style({
   textAlign: "center",
   color: themeVars.color.foregroundSecondary,
   gap: tokens.spacing.xs,
+});
+
+export const swipe = style({
+  display: "none",
+  "@media": {
+    "(hover: none) and (pointer: coarse)": {
+      display: "unset",
+    },
+  },
+});
+
+export const scroll = style({
+  display: "none",
+  "@media": {
+    "(hover: hover) and (pointer: fine)": {
+      display: "unset",
+    },
+  },
 });

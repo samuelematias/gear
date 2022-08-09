@@ -22,7 +22,12 @@ export const Gallery = ({ images }: GalleryProps) => {
         </div>
       </figure>
       <p className={styles.note}>
-        ← <span>Swipe to view more</span> →
+        ←{" "}
+        <span>
+          <span className={styles.swipe}>Swipe</span>
+          <span className={styles.scroll}>Scroll</span> to view more
+        </span>{" "}
+        →
       </p>
     </>
   );
