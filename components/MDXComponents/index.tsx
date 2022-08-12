@@ -5,7 +5,9 @@ import { Heading } from "../Heading";
 import { ProsCons } from "../ProsCons";
 
 export const components = {
-  blockquote: (props) => <Blockquote {...props} />,
+  blockquote: ({ children }: { children: string }) => (
+    <Blockquote>{children}</Blockquote>
+  ),
   h2: ({ children }: { children: React.ReactNode }) => (
     <Heading>{children}</Heading>
   ),
