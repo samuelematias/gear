@@ -4,6 +4,9 @@ import { tokens } from "./tokens.css";
 const space = tokens.spacing;
 export type Space = keyof typeof space;
 
+const fontSize = tokens.fontSize;
+export type FontSize = keyof typeof fontSize;
+
 const responsiveProperties = defineProperties({
   conditions: {
     sm: {},
@@ -37,6 +40,7 @@ const responsiveProperties = defineProperties({
     width: space,
     height: space,
     aspectRatio: ["1/1", "4/3", "16/9"],
+    fontSize,
   },
   shorthands: {
     padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],

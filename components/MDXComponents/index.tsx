@@ -1,8 +1,11 @@
+import { Blockquote } from "../Blockquote";
 import { Profile } from "../Profile";
 import { Gallery } from "../Gallery";
 import { Heading } from "../Heading";
+import { ProsCons } from "../ProsCons";
 
 export const components = {
+  blockquote: (props) => <Blockquote {...props} />,
   h2: ({ children }: { children: React.ReactNode }) => (
     <Heading>{children}</Heading>
   ),
@@ -11,4 +14,5 @@ export const components = {
   ),
   Gallery,
   Profile,
+  ProsCons,
 };

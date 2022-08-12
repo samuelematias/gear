@@ -5,6 +5,7 @@ import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, allLinks } from "contentlayer/generated";
 import { Spacer } from "@/components/Spacer";
 import { Heading } from "@/components/Heading";
+import { Blockquote } from "@/components/Blockquote";
 // import * as styles from "./Home.css";
 
 export async function getStaticProps() {
@@ -23,7 +24,7 @@ export const Home: NextPage<{
 }> = ({ posts, links }) => {
   return (
     <>
-      <Heading size="lg">Latest posts</Heading>
+      <Heading fontSize="lg">Latest posts</Heading>
 
       <Spacer height="md" />
 
@@ -46,7 +47,7 @@ export const Home: NextPage<{
 
       <Spacer height="xl" />
 
-      <Heading size="lg">Link feed</Heading>
+      <Heading fontSize="lg">Link feed</Heading>
 
       <Spacer height="md" />
 

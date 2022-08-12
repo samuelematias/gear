@@ -39,7 +39,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
         <title>{post.title}</title>
       </Head>
       <article>
-        <Heading size="xl">{post.title}</Heading>
+        <Heading fontSize="xl">{post.title}</Heading>
         <time dateTime={post.date}>
           {format(parseISO(post.date), "LLLL d, yyyy")}
         </time>

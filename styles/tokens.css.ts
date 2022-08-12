@@ -6,10 +6,12 @@ export const tokens = createGlobalTheme(":root", {
     sans: "'Inter var', sans-serif",
   },
   fontSize: {
+    /* 14px */
     sm: "0.875rem",
     md: "1rem",
     lg: "1.125rem",
     xl: "1.25rem",
+    xxl: "1.75rem",
   },
   spacing: {
     none: "0",
