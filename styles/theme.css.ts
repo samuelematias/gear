@@ -1,13 +1,14 @@
 import { createGlobalTheme } from "@vanilla-extract/css";
-import { tokens } from "./tokens.css";
+import { sand } from "@radix-ui/colors";
 
 export const themeVars = createGlobalTheme(":root", {
   color: {
-    page: tokens.color.light.coyote,
-    foreground: tokens.color.light.sand12,
-    foregroundSecondary: tokens.color.light.sand11,
-    underline: tokens.color.light.sand8,
-    underlineHover: tokens.color.light.sand11,
-    border: tokens.color.light.sand8,
+    brand: "#f30",
+    page: "#f3f2f3",
+    foreground: sand.sand12,
+    foregroundSecondary: sand.sand11,
+    underline: sand.sand8,
+    underlineHover: sand.sand11,
+    border: sand.sand8,
   },
 });

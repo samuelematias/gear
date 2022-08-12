@@ -1,6 +1,7 @@
 import { themeVars } from "@/styles/theme.css";
 import { tokens } from "@/styles/tokens.css";
 import { style } from "@vanilla-extract/css";
+import { calc } from "@vanilla-extract/css-utils";
 
 export const root = style({
   width: "100vw",
@@ -16,7 +17,7 @@ export const root = style({
   display: "grid",
   gridTemplateColumns: `[full-start] 1fr
     [content-start]
-    min(${tokens.maxWidth.md}, 100% - ${tokens.spacing.xl})
+    min(${tokens.maxWidth.md}, 100% - ${calc.multiply(tokens.spacing.md, 2)})
     [content-end]
     1fr [full-end]`,
 

@@ -37,7 +37,7 @@ export const anchor = style({
   display: "block",
   width: "1.5rem",
   height: "1.5rem",
-  backgroundColor: "#f30",
+  backgroundColor: themeVars.color.brand,
   borderRadius: "9999px",
   flexShrink: 0,
 });

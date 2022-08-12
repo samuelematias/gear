@@ -5,12 +5,6 @@ export const tokens = createGlobalTheme(":root", {
   font: {
     sans: "'Inter var', sans-serif",
   },
-  color: {
-    light: {
-      coyote: "#f3f2f3",
-      ...sand,
-    },
-  },
   fontSize: {
     sm: "0.875rem",
     md: "1rem",
