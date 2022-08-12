@@ -1,6 +1,7 @@
 import type { Sprinkles } from "@/styles/sprinkles.css";
 import clsx from "clsx";
 import { sprinkles } from "@/styles/sprinkles.css";
+import * as styles from "./Heading.css";
 
 interface HeadingProps {
   as?: "h1" | "h2" | "h3";
@@ -18,7 +19,8 @@ export const Heading = ({
       className={clsx(
         sprinkles({
           fontSize,
-        })
+        }),
+        styles.root
       )}
     >
       {children}
