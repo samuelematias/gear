@@ -1,5 +1,5 @@
 import { NextPage } from "next/types";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import { format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
@@ -35,9 +35,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
   const MDXContent = useMDXComponent(post.body.code);
   return (
     <>
-      <Head>
-        <title>{post.title}</title>
-      </Head>
+      <NextSeo title={post.title} />
       <article>
         <Heading as="h1" fontSize="xl">
           {post.title}

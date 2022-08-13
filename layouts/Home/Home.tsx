@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import type { Post, Photo, ExternalLink } from "contentlayer/generated";
 import NextLink from "next/link";
 import Image from "next/image";
+import { NextSeo } from "next-seo";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, allExternalLinks, allPhotos } from "contentlayer/generated";
 import { Spacer } from "@/components/Spacer";
@@ -28,6 +29,8 @@ export const Home: NextPage<{
 }> = ({ posts, photos, externalLinks }) => {
   return (
     <>
+      <NextSeo title="Home" />
+
       <h1 hidden>Home</h1>
 
       <Heading fontSize="lg">Posts</Heading>
