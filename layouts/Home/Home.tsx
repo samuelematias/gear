@@ -1,30 +1,36 @@
 import type { NextPage } from "next";
-import type { Post, Link } from "contentlayer/generated";
+import type { Post, Photo, ExternalLink } from "contentlayer/generated";
 import NextLink from "next/link";
+import Image from "next/image";
 import { compareDesc, format, parseISO } from "date-fns";
-import { allPosts, allLinks } from "contentlayer/generated";
+import { allPosts, allExternalLinks, allPhotos } from "contentlayer/generated";
 import { Spacer } from "@/components/Spacer";
 import { Heading } from "@/components/Heading";
-import { Blockquote } from "@/components/Blockquote";
-// import * as styles from "./Home.css";
+import * as styles from "./Home.css";
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
     return compareDesc(new Date(a.date), new Date(b.date));
   });
-  const links = allLinks.sort((a, b) => {
+  const photos = allPhotos.sort((a, b) => {
     return compareDesc(new Date(a.date), new Date(b.date));
   });
-  return { props: { posts, links } };
+  const externalLinks = allExternalLinks.sort((a, b) => {
+    return compareDesc(new Date(a.date), new Date(b.date));
+  });
+  return { props: { posts, photos, externalLinks } };
 }
 
 export const Home: NextPage<{
   posts: Post[];
-  links: Link[];
-}> = ({ posts, links }) => {
+  photos: Photo[];
+  externalLinks: ExternalLink[];
+}> = ({ posts, photos, externalLinks }) => {
   return (
     <>
-      <Heading fontSize="lg">Latest posts</Heading>
+      <h1 hidden>Home</h1>
+
+      <Heading fontSize="lg">Posts</Heading>
 
       <Spacer height="md" />
 
@@ -47,12 +53,35 @@ export const Home: NextPage<{
 
       <Spacer height="xl" />
 
-      <Heading fontSize="lg">Link feed</Heading>
+      <Heading fontSize="lg">Photos</Heading>
+
+      <Spacer height="md" />
+
+      <ul className={styles.photos}>
+        {photos.map(({ image, link }, idx) => {
+          return (
+            <li key={idx} className={styles.photosItem}>
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width="300"
+                height="300"
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </li>
+          );
+        })}
+      </ul>
+
+      <Spacer height="xl" />
+
+      <Heading fontSize="lg">Links</Heading>
 
       <Spacer height="md" />
 
       <ul>
-        {links.map((link, idx) => (
+        {externalLinks.map((link, idx) => (
           <li key={idx}>
             <h3>
               <a href={link.link}>{link.title}</a>

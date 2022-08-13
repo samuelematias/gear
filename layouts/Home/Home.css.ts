@@ -14,3 +14,13 @@ export const primary = style({
 export const secondary = style({
   gridColumn: "span 4",
 });
+
+export const photos = style({
+  display: "grid",
+  gridTemplateColumns: "repeat(4, 1fr)",
+  gap: tokens.spacing.md,
+});
+
+export const photosItem = style({
+  display: "grid",
+});

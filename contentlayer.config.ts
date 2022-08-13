@@ -1,4 +1,4 @@
-import slugify from "@sindresorhus/slugify";
+// import slugify from "@sindresorhus/slugify";
 import {
   defineDocumentType,
   defineNestedType,
@@ -47,9 +47,9 @@ export const Post = defineDocumentType(() => ({
   },
 }));
 
-export const Link = defineDocumentType(() => ({
-  name: "Link",
-  filePathPattern: `links/*.mdx`,
+export const ExternalLink = defineDocumentType(() => ({
+  name: "ExternalLink",
+  filePathPattern: `external-links/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
@@ -67,9 +67,34 @@ export const Link = defineDocumentType(() => ({
   },
 }));
 
+export const Photo = defineDocumentType(() => ({
+  name: "Photo",
+  filePathPattern: `photos/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    date: {
+      type: "date",
+      required: true,
+    },
+    image: {
+      type: "nested",
+      of: Image,
+      required: true,
+    },
+    link: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+      required: false,
+    },
+  },
+}));
+
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Post, Link],
+  documentTypes: [Post, ExternalLink, Photo],
   mdx: {
     remarkPlugins: [remarkGfm],
   },
