@@ -1,14 +1,13 @@
 import type { NextPage } from "next";
 import type { Post, Photo, ExternalLink } from "contentlayer/generated";
 import NextLink from "next/link";
-import Image from "next/image";
 import { NextSeo } from "next-seo";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, allExternalLinks, allPhotos } from "contentlayer/generated";
 import { Spacer } from "@/components/Spacer";
 import { Heading } from "@/components/Heading";
 import { PhotoGrid } from "@/components/PhotoGrid";
-import * as styles from "./Home.css";
+import { Glyph } from "@/components/Glyph";
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
@@ -30,7 +29,7 @@ export const Home: NextPage<{
 }> = ({ posts, photos, externalLinks }) => {
   return (
     <>
-      <NextSeo title="Home" />
+      <NextSeo title="Gear" />
 
       <h1 hidden>Home</h1>
 
@@ -75,7 +74,7 @@ export const Home: NextPage<{
             <h3>
               <a href={link.link}>{link.title}</a>
               {"\u00A0"}
-              <span aria-hidden="true">↗</span>
+              <Glyph name="externalArrow" />
             </h3>
             <time dateTime={link.date}>
               {format(parseISO(link.date), "LLL d, Y")}

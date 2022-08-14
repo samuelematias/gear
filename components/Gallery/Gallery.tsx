@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import type { ImageProps } from "next/image";
 import Image from "next/image";
+import { Glyph } from "../Glyph";
 import * as styles from "./Gallery.css";
 
 interface GalleryProps {
@@ -22,12 +23,12 @@ export const Gallery = ({ images }: GalleryProps) => {
         </div>
       </figure>
       <p className={styles.note}>
-        ←{" "}
+        <Glyph name="leftArrow" />{" "}
         <span>
           <span className={styles.swipe}>Swipe</span>
           <span className={styles.scroll}>Scroll</span> to view more
         </span>{" "}
-        →
+        <Glyph name="rightArrow" />
       </p>
     </>
   );
