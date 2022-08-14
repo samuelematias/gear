@@ -35,7 +35,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
   const MDXContent = useMDXComponent(post.body.code);
   return (
     <>
-      <NextSeo title={post.title} />
+      <NextSeo title={post.title} description={post.description} />
       <article>
         <Heading as="h1" fontSize="xl">
           {post.title}
