@@ -7,6 +7,7 @@ import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, allExternalLinks, allPhotos } from "contentlayer/generated";
 import { Spacer } from "@/components/Spacer";
 import { Heading } from "@/components/Heading";
+import { PhotoGrid } from "@/components/PhotoGrid";
 import * as styles from "./Home.css";
 
 export async function getStaticProps() {
@@ -27,6 +28,7 @@ export const Home: NextPage<{
   photos: Photo[];
   externalLinks: ExternalLink[];
 }> = ({ posts, photos, externalLinks }) => {
+  console.log(photos);
   return (
     <>
       <NextSeo title="Home" />
@@ -60,22 +62,7 @@ export const Home: NextPage<{
 
       <Spacer height="md" />
 
-      <ul className={styles.photos}>
-        {photos.map(({ image, link }, idx) => {
-          return (
-            <li key={idx} className={styles.photosItem}>
-              <Image
-                src={image.src}
-                alt={image.alt}
-                width="300"
-                height="300"
-                objectFit="cover"
-                objectPosition="center"
-              />
-            </li>
-          );
-        })}
-      </ul>
+      <PhotoGrid photos={photos.map(({ image }) => image)} />
 
       <Spacer height="xl" />
 
