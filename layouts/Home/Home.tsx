@@ -28,7 +28,6 @@ export const Home: NextPage<{
   photos: Photo[];
   externalLinks: ExternalLink[];
 }> = ({ posts, photos, externalLinks }) => {
-  console.log(photos);
   return (
     <>
       <NextSeo title="Home" />
