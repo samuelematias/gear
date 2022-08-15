@@ -9,7 +9,7 @@ export type TextProps<C extends React.ElementType> = PolymorphicComponentProps<
   {
     as?: "p" | "strong" | "em" | "time";
     fontSize?: Sprinkles["fontSize"];
-    color?: "foreground" | "foregroundSecondary" | "brand";
+    color?: Sprinkles["color"];
     children: React.ReactNode;
   }
 >;

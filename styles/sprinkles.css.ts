@@ -1,4 +1,5 @@
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
+import { themeVars } from "./theme.css";
 import { tokens } from "./tokens.css";
 
 const space = tokens.spacing;
@@ -6,6 +7,9 @@ export type Space = keyof typeof space;
 
 const fontSize = tokens.fontSize;
 export type FontSize = keyof typeof fontSize;
+
+const color = themeVars.color;
+export type Color = keyof typeof color;
 
 const responsiveProperties = defineProperties({
   conditions: {
@@ -50,11 +54,15 @@ const responsiveProperties = defineProperties({
   },
 });
 
-// const unresponsiveProperties = defineProperties({});
+const unresponsiveProperties = defineProperties({
+  properties: {
+    color: color,
+  },
+});
 
 export const sprinkles = createSprinkles(
-  responsiveProperties
-  // unresponsiveProperties
+  responsiveProperties,
+  unresponsiveProperties
 );
 
 export type Sprinkles = Parameters<typeof sprinkles>[0];
