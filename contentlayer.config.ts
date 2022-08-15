@@ -83,7 +83,7 @@ export const Photo = defineDocumentType(() => ({
     },
     link: {
       type: "string",
-      required: true,
+      required: false,
     },
     description: {
       type: "string",
