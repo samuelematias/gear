@@ -10,6 +10,7 @@ import { Heading } from "@/components/Heading";
 import { PhotoGrid } from "@/components/PhotoGrid";
 import { Glyph } from "@/components/Glyph";
 import { List } from "@/components/List";
+import { Text } from "@/components/Text";
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
@@ -48,9 +49,9 @@ export const Home: NextPage<{
                   <a>{post.title}</a>
                 </NextLink>
               </h3>
-              <time dateTime={post.date}>
+              <Text as="time" dateTime={post.date} color="foregroundSecondary">
                 {format(parseISO(post.date), "LLL d, Y")}
-              </time>
+              </Text>
             </React.Fragment>
           );
         })}
@@ -78,9 +79,9 @@ export const Home: NextPage<{
               {"\u00A0"}
               <Glyph name="externalArrow" />
             </h3>
-            <time dateTime={link.date}>
+            <Text as="time" dateTime={link.date} color="foregroundSecondary">
               {format(parseISO(link.date), "LLL d, Y")}
-            </time>
+            </Text>
           </React.Fragment>
         ))}
       </List>

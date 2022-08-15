@@ -8,6 +8,7 @@ import { Heading } from "@/components/Heading";
 import { Gallery } from "@/components/Gallery";
 import { Prose } from "@/components/Prose";
 import { Spacer } from "@/components/Spacer";
+import { Text } from "@/components/Text";
 
 export async function getStaticPaths() {
   return {
@@ -40,9 +41,9 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
         <Heading as="h1" fontSize="xl">
           {post.title}
         </Heading>
-        <time dateTime={post.date}>
+        <Text as="time" dateTime={post.date} color="foregroundSecondary">
           {format(parseISO(post.date), "LLLL d, yyyy")}
-        </time>
+        </Text>
         <Spacer height="lg" />
         {post.gallery ? (
           <>
