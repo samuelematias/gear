@@ -1,3 +1,4 @@
+import * as React from "react";
 import type { NextPage } from "next";
 import type { Post, Photo, ExternalLink } from "contentlayer/generated";
 import NextLink from "next/link";
@@ -8,6 +9,7 @@ import { Spacer } from "@/components/Spacer";
 import { Heading } from "@/components/Heading";
 import { PhotoGrid } from "@/components/PhotoGrid";
 import { Glyph } from "@/components/Glyph";
+import { List } from "@/components/List";
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
@@ -37,10 +39,10 @@ export const Home: NextPage<{
 
       <Spacer height="md" />
 
-      <ul>
+      <List>
         {posts.map((post, idx) => {
           return (
-            <li key={idx}>
+            <React.Fragment key={idx}>
               <h3>
                 <NextLink href={`/posts/${post.slug}`}>
                   <a>{post.title}</a>
@@ -49,10 +51,10 @@ export const Home: NextPage<{
               <time dateTime={post.date}>
                 {format(parseISO(post.date), "LLL d, Y")}
               </time>
-            </li>
+            </React.Fragment>
           );
         })}
-      </ul>
+      </List>
 
       <Spacer height="xl" />
 
@@ -68,9 +70,9 @@ export const Home: NextPage<{
 
       <Spacer height="md" />
 
-      <ul>
+      <List>
         {externalLinks.map((link, idx) => (
-          <li key={idx}>
+          <React.Fragment key={idx}>
             <h3>
               <a href={link.link}>{link.title}</a>
               {"\u00A0"}
@@ -79,9 +81,9 @@ export const Home: NextPage<{
             <time dateTime={link.date}>
               {format(parseISO(link.date), "LLL d, Y")}
             </time>
-          </li>
+          </React.Fragment>
         ))}
-      </ul>
+      </List>
     </>
   );
 };

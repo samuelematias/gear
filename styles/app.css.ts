@@ -53,16 +53,11 @@ globalStyle("a:not([class]):hover", {
   textDecorationColor: themeVars.color.underlineHover,
 });
 
-globalStyle("a:focus-visible", {
+globalStyle("a:focus-visible, button:focus-visible", {
   outlineWidth: "2px",
   outlineStyle: "solid",
   outlineOffset: "2px",
   outlineColor: "#3e91f7",
-});
-
-globalStyle("ul:not([class])", {
-  display: "grid",
-  rowGap: tokens.spacing.sm,
 });
 
 globalStyle("time", {
