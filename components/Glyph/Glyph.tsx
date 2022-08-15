@@ -2,6 +2,8 @@ const glyphs = {
   rightArrow: "→",
   leftArrow: "←",
   externalArrow: "↗",
+  circleCheck: "",
+  circleX: "",
 } as const;
 
 interface GlyphProps {

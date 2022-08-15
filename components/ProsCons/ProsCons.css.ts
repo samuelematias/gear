@@ -21,12 +21,16 @@ export const group = style({
   },
 });
 
+export const item = style({
+  display: "flex",
+  gap: tokens.spacing.md,
+});
+
 export const mark = style({
   display: "inline-grid",
   placeItems: "center",
-  width: "1rem",
-  height: "1rem",
-  lineHeight: 1,
+  width: "1em",
+  height: "1em",
 });
 
 export const pro = style({
