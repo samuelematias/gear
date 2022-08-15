@@ -1,6 +1,6 @@
 import type { PolymorphicComponentProps } from "types";
 import * as React from "react";
-import type { Sprinkles, Color } from "@/styles/sprinkles.css";
+import type { Sprinkles } from "@/styles/sprinkles.css";
 import clsx from "clsx";
 import { sprinkles } from "@/styles/sprinkles.css";
 
