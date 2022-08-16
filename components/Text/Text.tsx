@@ -7,9 +7,12 @@ import { sprinkles } from "@/styles/sprinkles.css";
 export type TextProps<C extends React.ElementType> = PolymorphicComponentProps<
   C,
   {
-    as?: "p" | "strong" | "em" | "time";
+    as?: "p" | "span" | "strong" | "em" | "time";
     fontSize?: Sprinkles["fontSize"];
-    color?: Sprinkles["color"];
+    color?: Extract<
+      Sprinkles["color"],
+      "foreground" | "foregroundSecondary" | "brand"
+    >;
     children: React.ReactNode;
   }
 >;
