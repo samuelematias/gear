@@ -41,7 +41,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
         description={post.description}
         openGraph={{
           type: "article",
-          url: `https://gear.alexcarpenter.com/${post.slug}`,
+          url: `https://gear.alexcarpenter.me/${post.slug}`,
           title: post.title,
           description: post.description,
           article: {
@@ -49,7 +49,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
           },
           images: [
             {
-              url: `https://gear.alexcarpenter.com/img/thumbnail-${post.slug}.png`,
+              url: `https://gear.alexcarpenter.me/img/thumbnail-${post.slug}.png`,
             },
           ],
         }}
