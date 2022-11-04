@@ -47,54 +47,9 @@ export const Post = defineDocumentType(() => ({
   },
 }));
 
-export const ExternalLink = defineDocumentType(() => ({
-  name: "ExternalLink",
-  filePathPattern: `external-links/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: {
-      type: "string",
-      required: true,
-    },
-    date: {
-      type: "date",
-      required: true,
-    },
-    link: {
-      type: "string",
-      required: true,
-    },
-  },
-}));
-
-export const Photo = defineDocumentType(() => ({
-  name: "Photo",
-  filePathPattern: `photos/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    date: {
-      type: "date",
-      required: true,
-    },
-    image: {
-      type: "nested",
-      of: Image,
-      required: true,
-    },
-    link: {
-      type: "string",
-      required: false,
-    },
-    description: {
-      type: "string",
-      required: false,
-    },
-  },
-}));
-
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Post, ExternalLink, Photo],
+  documentTypes: [Post],
   mdx: {
     remarkPlugins: [remarkGfm],
   },

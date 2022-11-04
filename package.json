@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-slot": "^1.0.0",
     "@sindresorhus/slugify": "^2.1.0",
     "@vanilla-extract/babel-plugin": "^1.1.7",
     "@vanilla-extract/css": "^1.7.2",
@@ -19,6 +20,7 @@
     "clsx": "^1.2.1",
     "contentlayer": "^0.2.7",
     "date-fns": "^2.29.1",
+    "framer-motion": "^7.6.2",
     "next": "12.2.3",
     "next-contentlayer": "^0.2.7",
     "next-seo": "^5.5.0",

@@ -1,9 +1,9 @@
 import * as React from "react";
 import { createElement } from "react";
 import type { PolymorphicComponentProps } from "types";
-import type { Sprinkles } from "@/styles/sprinkles.css";
-import { sprinkles } from "@/styles/sprinkles.css";
-import clsx from "clsx";
+import type { Sprinkles } from "styles/sprinkles.css";
+import { sprinkles } from "styles/sprinkles.css";
+import { cn } from "lib/utils";
 
 export type BoxProps<C extends React.ElementType> = PolymorphicComponentProps<
   C,
@@ -29,15 +29,12 @@ export const Box = <C extends React.ElementType = "div">({
   gap,
   columnGap,
   rowGap,
-  gridTemplateColumns,
-  gridColumnStart,
-  gridColumnEnd,
   width,
   height,
   aspectRatio,
   ...restProps
 }: BoxProps<C>) => {
-  const atomClasses = clsx(
+  const atomClasses = cn(
     sprinkles({
       position,
       padding,
@@ -55,9 +52,6 @@ export const Box = <C extends React.ElementType = "div">({
       gap,
       columnGap,
       rowGap,
-      gridTemplateColumns,
-      gridColumnStart,
-      gridColumnEnd,
       width,
       height,
       aspectRatio,

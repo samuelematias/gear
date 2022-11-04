@@ -1,47 +1,35 @@
-import { tokens } from "@/styles/tokens.css";
-import { themeVars } from "@/styles/theme.css";
 import { style } from "@vanilla-extract/css";
-import { calc } from "@vanilla-extract/css-utils";
+import { themeVars } from "styles/theme.css";
+import { tokens } from "styles/tokens.css";
 
 export const root = style({
-  padding: tokens.spacing.md,
-  "@media": {
-    "(max-width: 959px)": {
-      marginInline: calc.multiply(tokens.spacing.md, -1),
-      marginBlockEnd: tokens.spacing.md,
-    },
-    "screen and (min-width: 960px)": {
-      writingMode: "vertical-rl",
-      left: 0,
-      position: "fixed",
-      width: "3rem",
-      height: "100%",
-      zIndex: 1,
-      backgroundColor: "rgba(243, 242, 243, 0.75)",
-      backdropFilter: "blur(10px)",
-    },
-  },
+  position: "sticky",
+  top: 0,
+  left: 0,
+  width: "100%",
+  background: "hsla(210, 16.7%, 97.6%, .9)",
+  backdropFilter: "blur(15px)",
+  zIndex: 1,
 });
 
-export const container = style({
-  marginInline: "auto",
-  marginBottom: "auto",
-  width: "100%",
-  maxWidth: tokens.maxWidth.md,
+export const nav = style({
   display: "flex",
-  alignItems: "center",
   gap: tokens.spacing.md,
+  maxWidth: tokens.maxWidth.md,
+  marginInline: "auto",
 });
 
 export const anchor = style({
-  display: "block",
-  width: "1.5rem",
-  height: "1.5rem",
-  backgroundColor: themeVars.color.brand,
-  borderRadius: "9999px",
-  flexShrink: 0,
+  position: "relative",
+  paddingBlock: tokens.spacing.md,
+  borderTop: "4px solid transparent",
 });
 
-export const description = style({
-  color: themeVars.color.foregroundSecondary,
+export const highlight = style({
+  position: "absolute",
+  top: -4,
+  left: 0,
+  width: "100%",
+  height: 4,
+  backgroundColor: themeVars.color.borderNeutral,
 });

@@ -8,6 +8,9 @@ export type Space = keyof typeof space;
 const fontSize = tokens.fontSize;
 export type FontSize = keyof typeof fontSize;
 
+const letterSpacing = tokens.letterSpacing;
+export type LetterSpacing = keyof typeof letterSpacing;
+
 const color = themeVars.color;
 export type Color = keyof typeof color;
 
@@ -20,7 +23,7 @@ const responsiveProperties = defineProperties({
   defaultCondition: "sm",
   properties: {
     position: ["relative", "absolute"],
-    display: ["none", "flex", "grid", "block", "inline"],
+    display: ["none", "flex", "block", "inline"],
     flexDirection: ["row", "column"],
     justifyContent: [
       "stretch",
@@ -38,9 +41,6 @@ const responsiveProperties = defineProperties({
     gap: space,
     columnGap: space,
     rowGap: space,
-    gridTemplateColumns: ["1fr", "repeat(12, minmax(0, 1fr))"],
-    gridColumnStart: [1, 2, 3, 4],
-    gridColumnEnd: [1, 2, 3, 4],
     width: space,
     height: space,
     aspectRatio: ["1/1", "4/3", "16/9"],
@@ -56,7 +56,9 @@ const responsiveProperties = defineProperties({
 
 const unresponsiveProperties = defineProperties({
   properties: {
-    color: color,
+    color,
+    textTransform: ["none", "uppercase"],
+    letterSpacing,
   },
 });
 

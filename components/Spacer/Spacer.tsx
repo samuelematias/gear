@@ -1,6 +1,6 @@
 import { PartialPick } from "types";
-import type { BoxProps } from "@/components/Box";
-import { Box } from "@/components/Box";
+import type { BoxProps } from "components/Box";
+import { Box } from "components/Box";
 
 export const Spacer = ({
   height,

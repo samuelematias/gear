@@ -4,7 +4,6 @@ import { Text } from "components/Text";
 import { Spacer } from "components/Spacer";
 import type { Post } from "contentlayer/generated";
 import { allPosts } from "contentlayer/generated";
-import { Mosaic } from "components/Mosaic";
 
 export async function getStaticProps() {
   const posts = allPosts.sort(
@@ -20,7 +19,6 @@ export async function getStaticProps() {
 export default function Home({ posts }: { posts: Post[] }) {
   return (
     <>
-      <Mosaic />
       <ul
         style={{
           paddingBlock: "4rem",

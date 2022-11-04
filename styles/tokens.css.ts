@@ -1,4 +1,3 @@
-import { sand } from "@radix-ui/colors";
 import { createGlobalTheme } from "@vanilla-extract/css";
 
 export const tokens = createGlobalTheme(":root", {
@@ -6,7 +5,6 @@ export const tokens = createGlobalTheme(":root", {
     sans: "'Inter var', sans-serif",
   },
   fontSize: {
-    /* 14px */
     sm: "0.875rem",
     md: "1rem",
     lg: "1.125rem",
@@ -22,7 +20,13 @@ export const tokens = createGlobalTheme(":root", {
     xl: "3rem",
     xxl: "4rem",
   },
+  letterSpacing: {
+    tight: "-.02em",
+    wide: ".02em",
+  },
   maxWidth: {
     md: "48rem",
+    lg: "64rem",
+    text: "68ch",
   },
 });

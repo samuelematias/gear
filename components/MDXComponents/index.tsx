@@ -1,20 +1,13 @@
-import { Blockquote } from "../Blockquote";
-import { Profile } from "../Profile";
-import { Gallery } from "../Gallery";
-import { Heading } from "../Heading";
-import { ProsCons } from "../ProsCons";
+import { Heading } from "components/Heading";
+import { Link } from "components/Link";
+import { Text } from "components/Text";
 
 export const components = {
-  blockquote: ({ children }: { children: string }) => (
-    <Blockquote>{children}</Blockquote>
-  ),
-  h2: ({ children }: { children: React.ReactNode }) => (
-    <Heading>{children}</Heading>
-  ),
-  h3: ({ children }: { children: React.ReactNode }) => (
-    <Heading as="h3">{children}</Heading>
-  ),
-  Gallery,
-  Profile,
-  ProsCons,
+  h2: (props: any) => <Heading {...props} fontSize="lg" />,
+  h3: (props: any) => <Heading {...props} />,
+  h4: (props: any) => <Heading {...props} />,
+  h5: (props: any) => <Heading {...props} />,
+  h6: (props: any) => <Heading {...props} />,
+  p: (props: any) => <Text {...props} />,
+  a: (props: any) => <Link {...props} />,
 };

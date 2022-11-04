@@ -1,20 +1,40 @@
 import Link from "next/link";
-import { VisuallyHidden } from "@/components/VisuallyHidden";
+import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 import * as styles from "./Banner.css";
 
-export const Banner = () => {
+const Banner = () => {
+  const router = useRouter();
   return (
     <header className={styles.root}>
-      <div className={styles.container}>
+      <nav className={styles.nav}>
         <Link href="/">
-          <a className={styles.anchor}>
-            <VisuallyHidden>Alex Carpenter</VisuallyHidden>
+          <a
+            className={styles.anchor}
+            aria-current={router.pathname === "/" ? "page" : undefined}
+          >
+            {router.pathname === "/" ? (
+              <motion.span layoutId="highlight" className={styles.highlight} />
+            ) : null}
+            Index
           </a>
         </Link>
-        <p className={styles.description}>
-          Serial Hobbyist / 42.9634° N, 85.6681° W
-        </p>
-      </div>
+        <Link href="/posts">
+          <a
+            className={styles.anchor}
+            aria-current={
+              router.pathname.includes("posts") ? "page" : undefined
+            }
+          >
+            {router.pathname.includes("posts") ? (
+              <motion.span layoutId="highlight" className={styles.highlight} />
+            ) : null}
+            Posts
+          </a>
+        </Link>
+      </nav>
     </header>
   );
 };
+
+export { Banner };
