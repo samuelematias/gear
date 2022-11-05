@@ -53,6 +53,7 @@ const responsiveProperties = defineProperties({
     aspectRatio: ["1/1", "4/3", "16/9"],
     fontSize,
     maxWidth,
+    float: ["none", "right", "left"],
   },
   shorthands: {
     padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],

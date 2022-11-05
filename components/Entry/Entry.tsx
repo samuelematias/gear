@@ -23,13 +23,8 @@ const Entry = ({
 }: EntryProps) => {
   return (
     <article>
-      <Box
-        display="flex"
-        alignItems="flex-start"
-        flexDirection={{ sm: "row-reverse", md: "row" }}
-        gap="md"
-      >
-        <Box display={{ sm: "flex", md: "flex" }} flexShrink={0}>
+      <Box display={{ md: "flex" }} alignItems="flex-start" gap="md">
+        <Box display="flex" float={{ sm: "right", md: "none" }} flexShrink={0}>
           <Image
             src={thumbnail}
             width="64"

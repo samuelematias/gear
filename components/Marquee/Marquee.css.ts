@@ -24,7 +24,7 @@ export const scroller = style({
 });
 
 export const item = style({
-  width: "33.33%",
+  width: "50%",
   paddingRight: tokens.spacing.md,
   display: "grid",
   placeItems: "center",

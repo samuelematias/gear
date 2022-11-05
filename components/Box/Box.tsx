@@ -41,6 +41,7 @@ export const Box = <C extends React.ElementType = "div">({
   maxWidth,
   height,
   aspectRatio,
+  float,
   ...restProps
 }: BoxProps<C>) => {
   const atomClasses = cn(
@@ -73,6 +74,7 @@ export const Box = <C extends React.ElementType = "div">({
       maxWidth,
       height,
       aspectRatio,
+      float,
     }),
     className
   );
