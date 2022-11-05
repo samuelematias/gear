@@ -5,6 +5,9 @@ import { tokens } from "./tokens.css";
 const space = tokens.spacing;
 export type Space = keyof typeof space;
 
+const maxWidth = tokens.maxWidth;
+export type MaxWidth = keyof typeof maxWidth;
+
 const fontSize = tokens.fontSize;
 export type FontSize = keyof typeof fontSize;
 
@@ -24,7 +27,7 @@ const responsiveProperties = defineProperties({
   properties: {
     position: ["relative", "absolute"],
     display: ["none", "flex", "block", "inline"],
-    flexDirection: ["row", "column"],
+    flexDirection: ["row", "column", "row-reverse"],
     justifyContent: [
       "stretch",
       "flex-start",
@@ -38,6 +41,10 @@ const responsiveProperties = defineProperties({
     paddingBottom: space,
     paddingLeft: space,
     paddingRight: space,
+    marginTop: space,
+    marginBottom: space,
+    marginLeft: space,
+    marginRight: space,
     gap: space,
     columnGap: space,
     rowGap: space,
@@ -45,11 +52,15 @@ const responsiveProperties = defineProperties({
     height: space,
     aspectRatio: ["1/1", "4/3", "16/9"],
     fontSize,
+    maxWidth,
   },
   shorthands: {
     padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
     paddingX: ["paddingLeft", "paddingRight"],
     paddingY: ["paddingTop", "paddingBottom"],
+    margin: ["marginTop", "marginBottom", "marginLeft", "marginRight"],
+    marginX: ["marginLeft", "marginRight"],
+    marginY: ["marginTop", "marginBottom"],
     placeItems: ["justifyContent", "alignItems"],
   },
 });
@@ -59,6 +70,7 @@ const unresponsiveProperties = defineProperties({
     color,
     textTransform: ["none", "uppercase"],
     letterSpacing,
+    flexShrink: [0],
   },
 });
 

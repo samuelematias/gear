@@ -13,12 +13,16 @@ export const tokens = createGlobalTheme(":root", {
   },
   spacing: {
     none: "0",
+    auto: "auto",
     xs: "0.25rem",
     sm: "0.5rem",
     md: "1rem",
     lg: "2rem",
     xl: "3rem",
     xxl: "4rem",
+  },
+  radius: {
+    md: "4px",
   },
   letterSpacing: {
     tight: "-.02em",

@@ -7,7 +7,8 @@ export const root = style({
   top: 0,
   left: 0,
   width: "100%",
-  background: "hsla(210, 16.7%, 97.6%, .9)",
+  paddingInline: tokens.spacing.md,
+  background: "hsla(206, 30.0%, 98.8%, .9)",
   backdropFilter: "blur(15px)",
   zIndex: 1,
 });
@@ -31,5 +32,5 @@ export const highlight = style({
   left: 0,
   width: "100%",
   height: 4,
-  backgroundColor: themeVars.color.borderNeutral,
+  backgroundColor: themeVars.color.highlight,
 });

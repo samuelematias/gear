@@ -1,7 +1,5 @@
-import Link from "next/link";
-import { Heading } from "components/Heading";
-import { Text } from "components/Text";
 import { Spacer } from "components/Spacer";
+import { Entry } from "components/Entry";
 import type { Post } from "contentlayer/generated";
 import { allPosts } from "contentlayer/generated";
 
@@ -30,24 +28,13 @@ export default function Home({ posts }: { posts: Post[] }) {
           return (
             <li key={post._id}>
               {index > 0 ? <Spacer height="lg" /> : null}
-              <article>
-                {/* <Text
-                  color="foregroundNeutral"
-                  textTransform="uppercase"
-                  letterSpacing="wide"
-                  fontSize="sm"
-                >
-                  Xtratuf
-                </Text>
-                <Spacer height="xs" /> */}
-                <Heading fontSize="xl" style={{ lineHeight: 1.2 }}>
-                  <Link href={`/posts/${post.slug}`}>
-                    <a>{post.title}</a>
-                  </Link>
-                </Heading>
-                <Spacer height="sm" />
-                <Text>{post.description}</Text>
-              </article>
+              <Entry
+                slug={post.slug}
+                thumbnail={post.thumbnail}
+                category={post.category}
+                heading={post.title}
+                description={post.description}
+              />
             </li>
           );
         })}

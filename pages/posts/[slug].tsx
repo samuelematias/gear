@@ -3,11 +3,13 @@ import { NextSeo } from "next-seo";
 import { allPosts, Post } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { formatDate } from "lib/utils";
+import { Box } from "components/Box";
 import { Heading } from "components/Heading";
-import { Prose } from "components/Props";
+import { Prose } from "components/Prose";
 import { Text } from "components/Text";
 import { Spacer } from "components/Spacer";
 import { components } from "components/MDXComponents";
+import { Mosaic } from "components/Mosaic";
 
 export async function getStaticPaths() {
   return {
@@ -53,18 +55,24 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
           ],
         }}
       />
-      <article>
-        <Heading as="h1" fontSize="xl">
-          {post.title}
-        </Heading>
-        <Text as="time" dateTime={post.date} color="foregroundNeutral">
-          {formatDate(post.date)}
-        </Text>
+      <Box as="article" paddingX="md">
+        <Box maxWidth="lg" marginX="auto">
+          <Mosaic />
+        </Box>
         <Spacer height="lg" />
-        <Prose>
-          <MDXContent components={components} />
-        </Prose>
-      </article>
+        <Box maxWidth="md" marginX="auto">
+          <Heading as="h1" fontSize="xxl">
+            {post.title}
+          </Heading>
+          <Text as="time" dateTime={post.date} color="foregroundNeutral">
+            {formatDate(post.date)}
+          </Text>
+          <Spacer height="lg" />
+          <Prose>
+            <MDXContent components={components} />
+          </Prose>
+        </Box>
+      </Box>
     </>
   );
 };

@@ -10,7 +10,7 @@ globalFontFace("Inter var", {
 });
 
 globalStyle("html", {
-  lineHeight: 1.5,
+  lineHeight: 1.45,
   WebkitTextSizeAdjust: "100%",
 });
 
@@ -28,4 +28,9 @@ globalStyle("body", {
   fontFamily: tokens.font.sans,
   backgroundColor: themeVars.color.page,
   color: themeVars.color.foreground,
+});
+
+globalStyle("svg", {
+  maxWidth: "100%",
+  height: "auto",
 });

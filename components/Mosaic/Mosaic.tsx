@@ -12,6 +12,9 @@ const Mosaic = ({}) => {
           objectPosition="center"
           layout="fill"
           alt=""
+          style={{
+            borderRadius: 4,
+          }}
         />
       </div>
       <div className={cn(styles.item, styles.secondary)}>
@@ -22,6 +25,9 @@ const Mosaic = ({}) => {
           objectFit="cover"
           objectPosition="center"
           alt=""
+          style={{
+            borderRadius: 4,
+          }}
         />
       </div>
       <div className={cn(styles.item, styles.tertiary)}>
@@ -32,6 +38,9 @@ const Mosaic = ({}) => {
           objectFit="cover"
           objectPosition="center"
           alt=""
+          style={{
+            borderRadius: 4,
+          }}
         />
       </div>
     </section>

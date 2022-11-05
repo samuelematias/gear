@@ -6,8 +6,6 @@ export const root = style({
   gridTemplateColumns: "1fr 1fr",
   gridTemplateRows: "1fr 1fr",
   gap: tokens.spacing.md,
-  maxInlineSize: tokens.maxWidth.lg,
-  marginInline: "auto",
 });
 
 export const item = style({
