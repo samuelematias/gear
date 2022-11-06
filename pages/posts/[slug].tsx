@@ -5,6 +5,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import { formatDate } from "lib/utils";
 import { Box } from "components/Box";
 import { Heading } from "components/Heading";
+import { Meta } from "components/Meta";
 import { Prose } from "components/Prose";
 import { Text } from "components/Text";
 import { Spacer } from "components/Spacer";
@@ -64,9 +65,28 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
           <Heading as="h1" fontSize="xxl">
             {post.title}
           </Heading>
-          <Text as="time" dateTime={post.date} color="foregroundNeutral">
-            {formatDate(post.date)}
-          </Text>
+          <Meta
+            items={[
+              {
+                title: "Published",
+                description: (
+                  <Text
+                    as="time"
+                    dateTime={post.date}
+                    color="foregroundNeutral"
+                  >
+                    {formatDate(post.date)}
+                  </Text>
+                ),
+              },
+              {
+                title: "Category",
+                description: (
+                  <Text color="foregroundNeutral">{post.category}</Text>
+                ),
+              },
+            ]}
+          />
           <Spacer height="lg" />
           <Prose>
             <MDXContent components={components} />
