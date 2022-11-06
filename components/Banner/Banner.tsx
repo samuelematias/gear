@@ -22,11 +22,9 @@ const Banner = () => {
         <Link href="/posts">
           <a
             className={styles.anchor}
-            aria-current={
-              router.pathname.includes("posts") ? "page" : undefined
-            }
+            aria-current={router.pathname === "/posts" ? "page" : undefined}
           >
-            {router.pathname.includes("posts") ? (
+            {router.pathname === "/posts" ? (
               <motion.span layoutId="highlight" className={styles.highlight} />
             ) : null}
             Posts

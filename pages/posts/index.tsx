@@ -1,5 +1,6 @@
-import { Spacer } from "components/Spacer";
+import { Box } from "components/Box";
 import { Entry } from "components/Entry";
+import { Spacer } from "components/Spacer";
 import type { Post } from "contentlayer/generated";
 import { allPosts } from "contentlayer/generated";
 
@@ -17,28 +18,24 @@ export async function getStaticProps() {
 export default function Home({ posts }: { posts: Post[] }) {
   return (
     <>
-      <ul
-        style={{
-          paddingBlock: "4rem",
-          maxInlineSize: "48rem",
-          marginInline: "auto",
-        }}
-      >
-        {posts.map((post, index) => {
-          return (
-            <li key={post._id}>
-              {index > 0 ? <Spacer height="lg" /> : null}
-              <Entry
-                slug={post.slug}
-                thumbnail={post.thumbnail}
-                category={post.category}
-                heading={post.title}
-                description={post.description}
-              />
-            </li>
-          );
-        })}
-      </ul>
+      <Box as="section" paddingX="md" marginY="xxl">
+        <Box as="ul" marginX="auto" maxWidth="md">
+          {posts.map((post, index) => {
+            return (
+              <li key={post._id}>
+                {index > 0 ? <Spacer height="lg" /> : null}
+                <Entry
+                  slug={post.slug}
+                  thumbnail={post.thumbnail}
+                  category={post.category}
+                  heading={post.title}
+                  description={post.description}
+                />
+              </li>
+            );
+          })}
+        </Box>
+      </Box>
     </>
   );
 }

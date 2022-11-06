@@ -55,11 +55,11 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
           ],
         }}
       />
-      <Box as="article" paddingX="md">
-        <Box maxWidth="lg" marginX="auto">
+      <Box as="article" paddingX="md" marginY="xxl">
+        {/* <Box maxWidth="lg" marginX="auto">
           <Mosaic />
         </Box>
-        <Spacer height="lg" />
+        <Spacer height="lg" /> */}
         <Box maxWidth="md" marginX="auto">
           <Heading as="h1" fontSize="xxl">
             {post.title}

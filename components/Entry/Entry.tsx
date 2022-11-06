@@ -24,7 +24,14 @@ const Entry = ({
   return (
     <article>
       <Box display={{ md: "flex" }} alignItems="flex-start" gap="md">
-        <Box display="flex" float={{ sm: "right", md: "none" }} flexShrink={0}>
+        <Box
+          display="flex"
+          float={{ sm: "right", md: "none" }}
+          flexShrink={0}
+          marginTop="xs"
+          marginLeft={{ sm: "sm", md: "none" }}
+          marginBottom={{ sm: "sm", md: "none" }}
+        >
           <Image
             src={thumbnail}
             width="64"

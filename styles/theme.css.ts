@@ -9,7 +9,7 @@ export const themeVars = createGlobalTheme(":root", {
     foregroundNeutral: slate.slate10,
     surface: slate.slate2,
     borderNeutral: slate.slate3,
-    highlight: grass.grass11,
+    highlight: "#FF4F00",
     action: grass.grass11,
   },
 });

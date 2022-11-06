@@ -3,14 +3,13 @@ import { themeVars } from "styles/theme.css";
 import { tokens } from "styles/tokens.css";
 
 export const root = style({
-  position: "sticky",
-  top: 0,
-  left: 0,
   width: "100%",
   paddingInline: tokens.spacing.md,
   background: "hsla(206, 30.0%, 98.8%, .9)",
   backdropFilter: "blur(15px)",
   zIndex: 1,
+  borderBottom: "1px solid",
+  borderColor: themeVars.color.borderNeutral,
 });
 
 export const nav = style({
