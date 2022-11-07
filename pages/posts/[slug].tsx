@@ -82,7 +82,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
               {
                 title: "Category",
                 description: (
-                  <Text color="foregroundNeutral">{post.category}</Text>
+                  <Text color="foregroundNeutral">#{post.category}</Text>
                 ),
               },
             ]}

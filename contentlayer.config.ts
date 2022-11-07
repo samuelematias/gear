@@ -55,9 +55,35 @@ export const Post = defineDocumentType(() => ({
   },
 }));
 
+export const Page = defineDocumentType(() => ({
+  name: "Page",
+  filePathPattern: `pages/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    published: {
+      type: "date",
+      required: true,
+    },
+    updated: {
+      type: "date",
+      required: true,
+    },
+  },
+  computedFields: {
+    slug: {
+      type: "string",
+      resolve: (page: any) => page._raw.sourceFileName.replace(/\.mdx$/, ""),
+    },
+  },
+}));
+
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Post],
+  documentTypes: [Page, Post],
   mdx: {
     remarkPlugins: [remarkGfm],
   },

@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Twitter, Facebook, Link } from "react-feather";
+import { SocialShare } from "components/SocialShare";
 import * as styles from "./Meta.css";
 
 interface MetaProps {
@@ -21,27 +23,17 @@ const Meta = ({ items }: MetaProps) => {
       {items.map(({ title, description }, index) => {
         return (
           <div className={styles.item} key={index}>
-            <dt
-              style={
-                {
-                  "--index": index,
-                } as React.CSSProperties
-              }
-            >
-              {title}
-            </dt>
-            <dd
-              style={
-                {
-                  "--index": index,
-                } as React.CSSProperties
-              }
-            >
-              {description}
-            </dd>
+            <dt className={styles.title}>{title}</dt>
+            <dd>{description}</dd>
           </div>
         );
       })}
+      <div className={styles.item}>
+        <dt className={styles.title}>Share</dt>
+        <dd>
+          <SocialShare />
+        </dd>
+      </div>
     </dl>
   );
 };

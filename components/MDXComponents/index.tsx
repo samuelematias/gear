@@ -1,6 +1,7 @@
 import { Heading } from "components/Heading";
 import { Link } from "components/Link";
 import { Text } from "components/Text";
+import { Image } from "./Image";
 
 export const components = {
   h2: (props: any) => <Heading {...props} fontSize="lg" />,
@@ -10,4 +11,5 @@ export const components = {
   h6: (props: any) => <Heading {...props} />,
   p: (props: any) => <Text {...props} />,
   a: (props: any) => <Link {...props} />,
+  Image,
 };
