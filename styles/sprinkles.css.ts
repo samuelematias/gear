@@ -1,4 +1,8 @@
-import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
+import {
+  defineProperties,
+  createSprinkles,
+  createMapValueFn,
+} from "@vanilla-extract/sprinkles";
 import { themeVars } from "./theme.css";
 import { tokens } from "./tokens.css";
 
@@ -54,6 +58,7 @@ const responsiveProperties = defineProperties({
     fontSize,
     maxWidth,
     float: ["none", "right", "left"],
+    textAlign: ["center", "right", "left"],
   },
   shorthands: {
     padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
@@ -74,6 +79,8 @@ const unresponsiveProperties = defineProperties({
     flexShrink: [0],
   },
 });
+
+export const mapResponsiveValue = createMapValueFn(responsiveProperties);
 
 export const sprinkles = createSprinkles(
   responsiveProperties,

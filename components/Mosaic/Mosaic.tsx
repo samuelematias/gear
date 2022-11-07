@@ -1,17 +1,24 @@
+import * as React from "react";
+import type { ImageProps } from "next/image";
 import Image from "next/image";
 import { cn } from "lib/utils";
 import * as styles from "./Mosaic.css";
 
-const Mosaic = ({}) => {
+interface MosaicProps {
+  items: ImageProps[];
+}
+
+const Mosaic = ({ items }: MosaicProps) => {
+  const [primary, secondary, tertiary] = items;
   return (
     <section className={styles.root}>
       <div className={cn(styles.item, styles.primary)}>
         <Image
-          src="/img/jon-gaffney-edc-winter-1.jpeg"
+          src={primary.src}
+          alt={primary.alt}
           objectFit="cover"
           objectPosition="center"
           layout="fill"
-          alt=""
           style={{
             borderRadius: 4,
           }}
@@ -19,12 +26,12 @@ const Mosaic = ({}) => {
       </div>
       <div className={cn(styles.item, styles.secondary)}>
         <Image
-          src="/img/jon-gaffney-edc-winter-2.jpeg"
+          src={secondary.src}
+          alt={secondary.alt}
           width={800}
           height={400}
           objectFit="cover"
           objectPosition="center"
-          alt=""
           style={{
             borderRadius: 4,
           }}
@@ -32,12 +39,12 @@ const Mosaic = ({}) => {
       </div>
       <div className={cn(styles.item, styles.tertiary)}>
         <Image
-          src="/img/jon-gaffney-edc-winter-3.jpeg"
+          src={tertiary.src}
+          alt={tertiary.alt}
           width={800}
           height={400}
           objectFit="cover"
           objectPosition="center"
-          alt=""
           style={{
             borderRadius: 4,
           }}

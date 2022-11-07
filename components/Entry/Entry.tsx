@@ -55,7 +55,7 @@ const Entry = ({
             </Text>
           ) : null}
           <Spacer height="xs" />
-          <Heading fontSize="xl" style={{ lineHeight: 1.2 }}>
+          <Heading as="h3" fontSize="xl" style={{ lineHeight: 1.2 }}>
             <Link href={`/posts/${slug}`}>
               <a>{heading}</a>
             </Link>

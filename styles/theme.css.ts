@@ -1,5 +1,5 @@
 import { createGlobalTheme } from "@vanilla-extract/css";
-import { slate, grass } from "@radix-ui/colors";
+import { slate, blue } from "@radix-ui/colors";
 
 export const themeVars = createGlobalTheme(":root", {
   color: {
@@ -9,7 +9,9 @@ export const themeVars = createGlobalTheme(":root", {
     foregroundHighContrast: slate.slate1,
     surface: slate.slate2,
     surfaceStrong: slate.slate12,
-    borderNeutral: slate.slate3,
+    border: slate.slate8,
+    borderNeutral: slate.slate4,
     highlight: "#FF4F00",
+    outline: blue.blue8,
   },
 });

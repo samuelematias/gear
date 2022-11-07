@@ -23,6 +23,15 @@ export const anchor = style({
   position: "relative",
   paddingBlock: tokens.spacing.md,
   borderTop: "4px solid transparent",
+  ":focus": {
+    outline: "transparent",
+  },
+  ":focus-visible": {
+    outlineWidth: "2px",
+    outlineStyle: "solid",
+    outlineOffset: "2px",
+    outlineColor: themeVars.color.outline,
+  },
 });
 
 export const highlight = style({

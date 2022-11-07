@@ -16,22 +16,15 @@ export const root = style({
 });
 
 export const scroller = style({
-  flexShrink: 0,
-  width: "100%",
-  whiteSpace: "nowrap",
   display: "flex",
-  alignItems: "center",
+  flexShrink: 0,
+  whiteSpace: "nowrap",
 });
 
 export const item = style({
-  width: "50%",
-  paddingRight: tokens.spacing.md,
+  paddingRight: tokens.spacing.xl,
   display: "grid",
   placeItems: "center",
   flexShrink: 0,
-  "@media": {
-    "screen and (min-width: 768px)": {
-      width: "20%",
-    },
-  },
+  color: themeVars.color.foregroundNeutral,
 });

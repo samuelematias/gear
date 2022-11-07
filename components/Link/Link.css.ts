@@ -3,5 +3,7 @@ import { themeVars } from "styles/theme.css";
 
 export const root = style({
   color: "inherit",
-  textDecoration: `2px solid ${themeVars.color.highlight}`,
+  textDecoration: "underline",
+  textDecorationColor: themeVars.color.border,
+  textDecorationThickness: 2,
 });

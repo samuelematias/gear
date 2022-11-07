@@ -5,21 +5,15 @@ import * as styles from "./Image.css";
 interface ImageProps {
   src: string;
   alt: string;
-  float?: "left" | "right";
-  width?: "full" | "half" | "quarter";
+  float?: "none" | "left" | "right";
+  width?: "1/1" | "1/2" | "1/3" | "1/4";
 }
 
-const Image = ({ src, alt, float, width = "full" }: ImageProps) => {
+const Image = ({ src, alt, float = "none", width = "1/1" }: ImageProps) => {
   return (
-    <div
-      className={cn(
-        styles.root,
-        styles.width[width],
-        float && styles.float[float]
-      )}
-    >
+    <div className={cn(styles.root, styles.width[width], styles.float[float])}>
       <NextImage
-        src="/img/jon-gaffney-edc-winter-1.jpeg"
+        src={src}
         layout="fill"
         objectFit="cover"
         alt={alt}

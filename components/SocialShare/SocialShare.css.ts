@@ -1,4 +1,5 @@
 import { style } from "@vanilla-extract/css";
+import { themeVars } from "styles/theme.css";
 import { tokens } from "styles/tokens.css";
 
 export const root = style({
@@ -13,4 +14,13 @@ export const item = style({
   width: "1.5rem",
   height: "1.5rem",
   borderRadius: tokens.radius.sm,
+  ":focus": {
+    outline: "transparent",
+  },
+  ":focus-visible": {
+    outlineWidth: "2px",
+    outlineStyle: "solid",
+    outlineOffset: "2px",
+    outlineColor: themeVars.color.outline,
+  },
 });

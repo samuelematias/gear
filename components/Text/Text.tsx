@@ -8,7 +8,7 @@ import * as styles from "./Text.css";
 export type TextProps<C extends React.ElementType> = PolymorphicComponentProps<
   C,
   {
-    as?: "p" | "span" | "strong" | "em" | "time";
+    as?: "p" | "span" | "strong" | "em" | "time" | "figcaption";
     fontSize?: Sprinkles["fontSize"];
     color?: Extract<
       Sprinkles["color"],

@@ -57,10 +57,14 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
         }}
       />
       <Box as="article" paddingX="md" marginY="xxl">
-        {/* <Box maxWidth="lg" marginX="auto">
-          <Mosaic />
-        </Box>
-        <Spacer height="lg" /> */}
+        {post.gallery ? (
+          <>
+            <Box maxWidth="lg" marginX="auto">
+              <Mosaic items={post.gallery} />
+            </Box>
+            <Spacer height="lg" />
+          </>
+        ) : null}
         <Box maxWidth="md" marginX="auto">
           <Heading as="h1" fontSize="xxl">
             {post.title}

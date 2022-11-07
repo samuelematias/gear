@@ -1,5 +1,6 @@
 import { style, styleVariants } from "@vanilla-extract/css";
 import { tokens } from "styles/tokens.css";
+import { responsiveStyle } from "styles/utils";
 
 export const root = style({
   position: "relative",
@@ -8,24 +9,40 @@ export const root = style({
 });
 
 export const width = styleVariants({
-  full: [root],
-  half: [
+  "1/1": [root],
+  "1/2": [
     root,
     {
       width: "50%",
       aspectRatio: "4/3",
     },
   ],
-  quarter: [
+  "1/3": [
     root,
-    {
-      width: "25%",
-      aspectRatio: "1/1",
-    },
+    responsiveStyle({
+      md: {
+        width: "33.33%",
+        aspectRatio: "4/3",
+      },
+    }),
+  ],
+  "1/4": [
+    root,
+    responsiveStyle({
+      md: {
+        width: "50%",
+        aspectRatio: "4/3",
+      },
+      lg: {
+        width: "25%",
+        aspectRatio: "1/1",
+      },
+    }),
   ],
 });
 
 export const float = styleVariants({
+  none: [root],
   right: [
     root,
     {
@@ -33,6 +50,13 @@ export const float = styleVariants({
       marginLeft: tokens.spacing.lg,
       marginBottom: tokens.spacing.lg,
     },
+    // responsiveStyle({
+    //   md: {
+    //     float: "right",
+    //     marginLeft: tokens.spacing.lg,
+    //     marginBottom: tokens.spacing.lg,
+    //   },
+    // }),
   ],
   left: [
     root,
@@ -41,5 +65,12 @@ export const float = styleVariants({
       marginRight: tokens.spacing.lg,
       marginBottom: tokens.spacing.lg,
     },
+    // responsiveStyle({
+    //   md: {
+    //     float: "left",
+    //     marginRight: tokens.spacing.lg,
+    //     marginBottom: tokens.spacing.lg,
+    //   },
+    // }),
   ],
 });
