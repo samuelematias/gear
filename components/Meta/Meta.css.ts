@@ -13,11 +13,8 @@ export const root = style({
 
 export const item = style({
   display: "grid",
-  // rowGap: tokens.spacing.xs,
 });
 
 export const title = style({
-  fontSize: tokens.fontSize.sm,
   fontVariationSettings: "'wght' 650",
-  letterSpacing: "-0.02em",
 });
