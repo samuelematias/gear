@@ -6,6 +6,7 @@ import { MotionConfig } from "framer-motion";
 import { DefaultSeo } from "next-seo";
 import SEO from "next-seo.config";
 import { Banner } from "components/Banner";
+import { ThemeProvider } from "next-themes";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 
 const composeProviders =
@@ -18,6 +19,14 @@ const composeProviders =
 
 const Providers = composeProviders(
   [MotionConfig, { reducedMotion: "user" }],
+  [
+    ThemeProvider,
+    {
+      attribute: "class",
+      defaultTheme: "system",
+      disableTransitionOnChange: true,
+    },
+  ],
   [TooltipProvider]
 );
 

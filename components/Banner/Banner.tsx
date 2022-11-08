@@ -16,7 +16,7 @@ const Banner = () => {
             {router.pathname === "/" ? (
               <motion.span layoutId="highlight" className={styles.highlight} />
             ) : null}
-            Index
+            Home
           </a>
         </Link>
         <Link href="/posts">

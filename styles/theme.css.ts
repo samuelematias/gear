@@ -1,7 +1,25 @@
-import { createGlobalTheme } from "@vanilla-extract/css";
-import { slate, blue } from "@radix-ui/colors";
+import {
+  createGlobalThemeContract,
+  createGlobalTheme,
+} from "@vanilla-extract/css";
+import { slate, slateDark, blue } from "@radix-ui/colors";
 
-export const themeVars = createGlobalTheme(":root", {
+export const themeVars = createGlobalThemeContract({
+  color: {
+    page: "color-page",
+    foreground: "color-foreground",
+    foregroundNeutral: "color-foreground-neutral",
+    foregroundHighContrast: "color-foreground-high-contrast",
+    surface: "color-surface",
+    surfaceStrong: "color-surface-strong",
+    border: "color-border",
+    borderNeutral: "color-border-neutral",
+    highlight: "color-highlight",
+    outline: "color-outline",
+  },
+});
+
+createGlobalTheme(":root.light", themeVars, {
   color: {
     page: slate.slate1,
     foreground: slate.slate12,
@@ -11,6 +29,21 @@ export const themeVars = createGlobalTheme(":root", {
     surfaceStrong: slate.slate12,
     border: slate.slate8,
     borderNeutral: slate.slate4,
+    highlight: "#FF4F00",
+    outline: blue.blue8,
+  },
+});
+
+createGlobalTheme(":root.dark", themeVars, {
+  color: {
+    page: slateDark.slate1,
+    foreground: slateDark.slate12,
+    foregroundNeutral: slateDark.slate10,
+    foregroundHighContrast: slateDark.slate1,
+    surface: slateDark.slate2,
+    surfaceStrong: slateDark.slate12,
+    border: slateDark.slate8,
+    borderNeutral: slateDark.slate4,
     highlight: "#FF4F00",
     outline: blue.blue8,
   },
