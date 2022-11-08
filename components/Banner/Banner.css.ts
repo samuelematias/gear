@@ -4,10 +4,8 @@ import { tokens } from "styles/tokens.css";
 
 export const root = style({
   width: "100%",
-  paddingInline: tokens.spacing.md,
-  background: "hsla(206, 30.0%, 98.8%, .9)",
-  backdropFilter: "blur(15px)",
-  zIndex: 1,
+  paddingLeft: tokens.spacing.md,
+  paddingRight: tokens.spacing.md,
   borderBottom: "1px solid",
   borderColor: themeVars.color.borderNeutral,
 });
@@ -16,7 +14,8 @@ export const nav = style({
   display: "flex",
   gap: tokens.spacing.md,
   maxWidth: tokens.maxWidth.md,
-  marginInline: "auto",
+  marginRight: "auto",
+  marginLeft: "auto",
 });
 
 export const anchor = style({

@@ -2,7 +2,6 @@ import { Box } from "components/Box";
 import { Entry } from "components/Entry";
 import { Heading } from "components/Heading";
 import { Marquee } from "components/Marquee";
-import { Mosaic } from "components/Mosaic";
 import { Spacer } from "components/Spacer";
 import { VisuallyHidden } from "components/VisuallyHidden";
 import type { Post } from "contentlayer/generated";
@@ -22,24 +21,6 @@ export async function getStaticProps() {
 export default function Home({ posts }: { posts: Post[] }) {
   return (
     <>
-      {/* <Box as="section" paddingX="md">
-        <Box marginX="auto" maxWidth="lg">
-          <Mosaic
-            items={[
-              {
-                src: "/img/jon-gaffney-edc-winter-1.jpeg",
-              },
-              {
-                src: "/img/jon-gaffney-edc-winter-2.jpeg",
-              },
-              {
-                src: "/img/jon-gaffney-edc-winter-3.jpeg",
-              },
-            ]}
-          />
-        </Box>
-      </Box> */}
-
       <Box as="section" paddingX="md" marginY="xxl">
         <Box marginX="auto" maxWidth="lg">
           <Box as="header" textAlign="center" marginBottom="lg">

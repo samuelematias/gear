@@ -1,9 +1,6 @@
-import type { BoxProps } from "components/Box";
 import type { Sprinkles } from "styles/sprinkles.css";
 import NextImage from "next/image";
-import { cn } from "lib/utils";
 import { Box } from "components/Box";
-import * as styles from "./Image.css";
 
 interface ImageProps {
   src: string;
