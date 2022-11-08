@@ -37,4 +37,9 @@ export const tokens = createGlobalTheme(":root", {
     lg: "64rem",
     text: "68ch",
   },
+  aspectRatio: {
+    "1/1": "1/1",
+    "16/9": "16/9",
+    "4/3": "4/3",
+  },
 });

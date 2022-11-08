@@ -8,7 +8,8 @@ export const root = style({
   gap: tokens.spacing.md,
   borderBottom: "1px solid",
   borderColor: themeVars.color.borderNeutral,
-  paddingBlock: tokens.spacing.md,
+  paddingTop: tokens.spacing.md,
+  paddingBottom: tokens.spacing.md,
 });
 
 export const item = style({

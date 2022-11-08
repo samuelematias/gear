@@ -21,7 +21,8 @@ export const nav = style({
 
 export const anchor = style({
   position: "relative",
-  paddingBlock: tokens.spacing.md,
+  paddingTop: tokens.spacing.md,
+  paddingBottom: tokens.spacing.md,
   borderTop: "4px solid transparent",
   ":focus": {
     outline: "transparent",

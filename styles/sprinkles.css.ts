@@ -21,6 +21,14 @@ export type LetterSpacing = keyof typeof letterSpacing;
 const color = themeVars.color;
 export type Color = keyof typeof color;
 
+const width = {
+  ...space,
+  "1/1": "100%",
+  "1/2": "50%",
+  "1/3": "33.33%",
+  "1/4": "24%",
+};
+
 const responsiveProperties = defineProperties({
   conditions: {
     sm: {},
@@ -52,7 +60,7 @@ const responsiveProperties = defineProperties({
     gap: space,
     columnGap: space,
     rowGap: space,
-    width: space,
+    width,
     height: space,
     aspectRatio: ["1/1", "4/3", "16/9"],
     fontSize,
