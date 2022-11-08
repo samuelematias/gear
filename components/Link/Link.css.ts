@@ -6,4 +6,7 @@ export const root = style({
   textDecoration: "underline",
   textDecorationColor: themeVars.color.border,
   textDecorationThickness: 2,
+  ":hover": {
+    textDecorationColor: themeVars.color.highlight,
+  },
 });
