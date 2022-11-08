@@ -1,6 +1,7 @@
 import { Heading } from "components/Heading";
 import { Link } from "components/Link";
 import { Text } from "components/Text";
+import { HorizontalRule } from "./HorizontalRule/HorizontalRule";
 import { Image } from "./Image";
 
 export const components = {
@@ -11,5 +12,6 @@ export const components = {
   h6: (props: any) => <Heading {...props} />,
   p: (props: any) => <Text {...props} />,
   a: (props: any) => <Link {...props} />,
+  hr: () => <HorizontalRule />,
   Image,
 };

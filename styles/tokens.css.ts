@@ -11,6 +11,9 @@ export const tokens = createGlobalTheme(":root", {
     xl: "1.25rem",
     xxl: "1.75rem",
   },
+  fontWeight: {
+    bold: "700",
+  },
   spacing: {
     none: "0",
     auto: "auto",

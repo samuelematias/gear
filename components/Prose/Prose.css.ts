@@ -14,3 +14,7 @@ globalStyle(`${root} > * + h2`, {
 globalStyle(`${root} > * + h3`, {
   marginBlockStart: tokens.spacing.lg,
 });
+
+globalStyle(`${root} strong`, {
+  fontVariationSettings: "'wght' 650",
+});
