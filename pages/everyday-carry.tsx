@@ -1,7 +1,9 @@
-import { NextPage } from "next/types";
-import { NextSeo } from "next-seo";
+import type { NextPage } from "next";
+import type { Page } from "contentlayer/generated";
+import { allPages } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { formatDate } from "lib/utils";
+import { NextSeo } from "next-seo";
 import { Box } from "components/Box";
 import { Heading } from "components/Heading";
 import { Meta } from "components/Meta";
@@ -9,9 +11,6 @@ import { Prose } from "components/Prose";
 import { Text } from "components/Text";
 import { Spacer } from "components/Spacer";
 import { components } from "components/MDXComponents";
-import type { Page } from "contentlayer/generated";
-import { allPages } from "contentlayer/generated";
-import { Mosaic } from "components/Mosaic";
 
 export async function getStaticProps() {
   const page = allPages.find((page) => page.slug === "everyday-carry");

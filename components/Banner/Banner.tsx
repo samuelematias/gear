@@ -30,6 +30,19 @@ const Banner = () => {
             Posts
           </a>
         </Link>
+        <Link href="/everyday-carry">
+          <a
+            className={styles.anchor}
+            aria-current={
+              router.pathname === "/everyday-carry" ? "page" : undefined
+            }
+          >
+            {router.pathname === "/everyday-carry" ? (
+              <motion.span layoutId="highlight" className={styles.highlight} />
+            ) : null}
+            EDC
+          </a>
+        </Link>
       </nav>
     </header>
   );
