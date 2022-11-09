@@ -6,6 +6,7 @@ import { MotionConfig } from "framer-motion";
 import { DefaultSeo } from "next-seo";
 import SEO from "next-seo.config";
 import { Banner } from "components/Banner";
+import { ContentInfo } from "components/ContentInfo";
 import { ThemeProvider } from "next-themes";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 
@@ -42,6 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <main id="main">
           <Component {...pageProps} />
         </main>
+        <ContentInfo />
       </Providers>
     </>
   );

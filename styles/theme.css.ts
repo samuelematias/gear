@@ -2,11 +2,12 @@ import {
   createGlobalThemeContract,
   createGlobalTheme,
 } from "@vanilla-extract/css";
-import { slate, slateDark, blue } from "@radix-ui/colors";
+import { slate, slateDark, slateDarkA, blue } from "@radix-ui/colors";
 
 export const themeVars = createGlobalThemeContract({
   color: {
     page: "color-page",
+    pageFaint: "color-page-faint",
     foreground: "color-foreground",
     foregroundNeutral: "color-foreground-neutral",
     foregroundHighContrast: "color-foreground-high-contrast",
@@ -22,6 +23,7 @@ export const themeVars = createGlobalThemeContract({
 createGlobalTheme(":root.light", themeVars, {
   color: {
     page: slate.slate1,
+    pageFaint: slate.slate3,
     foreground: slate.slate12,
     foregroundNeutral: slate.slate10,
     foregroundHighContrast: slate.slate1,
@@ -37,6 +39,7 @@ createGlobalTheme(":root.light", themeVars, {
 createGlobalTheme(":root.dark", themeVars, {
   color: {
     page: slateDark.slate1,
+    pageFaint: slateDark.slate3,
     foreground: slateDark.slate12,
     foregroundNeutral: slateDark.slate10,
     foregroundHighContrast: slateDark.slate1,
