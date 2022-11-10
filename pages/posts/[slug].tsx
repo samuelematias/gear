@@ -13,8 +13,12 @@ import { components } from "components/MDXComponents";
 import { Mosaic } from "components/Mosaic";
 
 export async function getStaticPaths() {
+  const posts = allPosts.filter((post) =>
+    process.env.VERCEL_ENV === "production" ? !post.draft : post
+  );
+
   return {
-    paths: allPosts.map((post) => ({ params: { slug: post.slug } })),
+    paths: posts.map((post) => ({ params: { slug: post.slug } })),
     fallback: false,
   };
 }
@@ -43,7 +47,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
         description={post.description}
         openGraph={{
           type: "article",
-          url: `https://gear.alexcarpenter.me/${post.slug}`,
+          url: `https://gear.alexcarpenter.me/posts/${post.slug}`,
           title: post.title,
           description: post.description,
           article: {
