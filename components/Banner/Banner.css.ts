@@ -12,14 +12,22 @@ export const root = style({
 
 export const nav = style({
   display: "flex",
+  justifyContent: "space-between",
   gap: tokens.spacing.md,
   maxWidth: tokens.maxWidth.md,
   marginRight: "auto",
   marginLeft: "auto",
 });
 
+export const group = style({
+  display: "flex",
+  gap: tokens.spacing.md,
+});
+
 export const anchor = style({
   position: "relative",
+  display: "grid",
+  placeItems: "center",
   paddingTop: tokens.spacing.md,
   paddingBottom: tokens.spacing.md,
   borderTop: "4px solid transparent",
