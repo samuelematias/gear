@@ -5,9 +5,11 @@ import type { Post } from "contentlayer/generated";
 import { allPosts } from "contentlayer/generated";
 
 export async function getStaticProps() {
-  const posts = allPosts.sort(
-    (a, b) => Number(new Date(b.date)) - Number(new Date(a.date))
-  );
+  const posts = allPosts
+    .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)))
+    .filter((post) =>
+      process.env.VERCEL_ENV === "preview" ? !post.draft : post
+    );
   return {
     props: {
       posts,
