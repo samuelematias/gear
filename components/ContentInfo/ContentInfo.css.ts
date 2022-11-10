@@ -3,6 +3,7 @@ import { themeVars } from "styles/theme.css";
 import { tokens } from "styles/tokens.css";
 
 export const root = style({
+  position: "relative",
   marginTop: "auto",
   paddingTop: tokens.spacing.xxl,
   paddingBottom: tokens.spacing.xxl,
@@ -10,4 +11,6 @@ export const root = style({
   paddingLeft: tokens.spacing.md,
   backgroundColor: themeVars.color.pageFaint,
   textAlign: "center",
+  display: "grid",
+  gridTemplateColumns: "repeat(3, 1fr)",
 });

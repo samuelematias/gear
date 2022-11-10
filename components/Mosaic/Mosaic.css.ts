@@ -1,11 +1,19 @@
 import { style } from "@vanilla-extract/css";
 import { tokens } from "styles/tokens.css";
+import { responsiveStyle } from "styles/utils";
 
 export const root = style({
   display: "grid",
   gridTemplateColumns: "1fr 1fr",
   gridTemplateRows: "1fr 1fr",
-  gap: tokens.spacing.md,
+  ...responsiveStyle({
+    sm: {
+      gap: tokens.spacing.sm
+    },
+    md: {
+      gap: tokens.spacing.md
+    }
+  })
 });
 
 export const item = style({
