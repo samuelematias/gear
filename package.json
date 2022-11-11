@@ -11,6 +11,7 @@
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-slot": "^1.0.0",
+    "@radix-ui/react-toast": "^1.1.1",
     "@radix-ui/react-tooltip": "^1.0.2",
     "@sindresorhus/slugify": "^2.1.0",
     "@vanilla-extract/babel-plugin": "^1.1.7",
@@ -31,7 +32,8 @@
     "react-dom": "18.2.0",
     "react-feather": "^2.0.10",
     "remark-gfm": "^3.0.1",
-    "the-new-css-reset": "^1.7.2"
+    "the-new-css-reset": "^1.7.2",
+    "zustand": "^4.1.4"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.188",

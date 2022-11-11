@@ -57,7 +57,7 @@ const Entry = ({
           <Spacer height="xs" />
           <Heading as="h3" fontSize="xl" style={{ lineHeight: 1.2 }}>
             <Link href={`/posts/${slug}`}>
-              <a>{heading}</a>
+              <a className={styles.anchor}>{heading}</a>
             </Link>
           </Heading>
           {description ? (

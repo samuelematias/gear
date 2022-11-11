@@ -2,6 +2,7 @@ import * as React from "react";
 import { useRouter } from "next/router";
 import { Twitter, Facebook, Link } from "react-feather";
 import { Tooltip } from "components/Tooltip";
+import { toast } from "components/Toast";
 import * as styles from "./SocialShare.css";
 
 const SocialShare = () => {
@@ -9,6 +10,9 @@ const SocialShare = () => {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(`https://gear.alexcarpenter.me${asPath}`);
+    toast({
+      content: "Copied to clipboard!",
+    });
   };
 
   return (

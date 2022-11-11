@@ -7,8 +7,10 @@ import { DefaultSeo } from "next-seo";
 import SEO from "next-seo.config";
 import { Banner } from "components/Banner";
 import { ContentInfo } from "components/ContentInfo";
+import { Toaster } from "components/Toast";
 import { ThemeProvider } from "next-themes";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
+import { ToastProvider } from "@radix-ui/react-toast";
 
 const composeProviders =
   (...providers: any[]) =>
@@ -28,7 +30,8 @@ const Providers = composeProviders(
       disableTransitionOnChange: true,
     },
   ],
-  [TooltipProvider]
+  [TooltipProvider],
+  [ToastProvider]
 );
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -44,6 +47,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </main>
         <ContentInfo />
+        <Toaster />
       </Providers>
     </>
   );

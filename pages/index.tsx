@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Box } from "components/Box";
 import { Entry } from "components/Entry";
 import { Heading } from "components/Heading";
@@ -23,6 +24,21 @@ export async function getStaticProps() {
 export default function Home({ posts }: { posts: Post[] }) {
   return (
     <>
+      <Box as="section" paddingX="md" marginY="xxl">
+        <Box marginX="auto" maxWidth="lg">
+          <Image
+            src="/img/goruck-rucker-evergoods-chz22.jpeg"
+            alt=""
+            width="1600"
+            height="900"
+            objectFit="cover"
+            style={{
+              borderRadius: 4,
+            }}
+          />
+        </Box>
+      </Box>
+
       <Box as="section" paddingX="md" marginY="xxl">
         <Box marginX="auto" maxWidth="lg">
           <Box as="header" textAlign="center" marginBottom="lg">
