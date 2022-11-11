@@ -9,4 +9,13 @@ export const root = style({
   ":hover": {
     textDecorationColor: themeVars.color.highlight,
   },
+  ":focus": {
+    outline: "transparent",
+  },
+  ":focus-visible": {
+    outlineWidth: "2px",
+    outlineStyle: "solid",
+    outlineOffset: "2px",
+    outlineColor: themeVars.color.outline,
+  },
 });

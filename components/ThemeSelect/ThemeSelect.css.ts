@@ -16,14 +16,40 @@ export const icon = style({
   top: 0,
   width: tokens.spacing.md,
   height: "100%",
+  pointerEvents: "none",
 });
 
 export const select = style({
   border: "1px solid",
   borderColor: themeVars.color.border,
-  paddingRight: tokens.spacing.xs,
+  paddingTop: tokens.spacing.xs,
+  paddingBottom: tokens.spacing.xs,
+  paddingRight: calc.add(
+    calc.multiply(tokens.spacing.xs, 2),
+    tokens.spacing.md
+  ),
   paddingLeft: calc.add(calc.multiply(tokens.spacing.xs, 2), tokens.spacing.md),
   fontSize: tokens.fontSize.sm,
   borderRadius: tokens.radius.md,
   textAlign: "left",
+  ":focus": {
+    outline: "transparent",
+  },
+  ":focus-visible": {
+    outlineWidth: "2px",
+    outlineStyle: "solid",
+    outlineOffset: "2px",
+    outlineColor: themeVars.color.outline,
+  },
+});
+
+export const arrow = style({
+  position: "absolute",
+  display: "grid",
+  placeItems: "center",
+  right: tokens.spacing.xs,
+  top: 0,
+  width: tokens.spacing.md,
+  height: "100%",
+  pointerEvents: "none",
 });
