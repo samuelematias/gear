@@ -1,5 +1,6 @@
 import { style } from "@vanilla-extract/css";
+import { tokens } from "styles/tokens.css";
 
 export const root = style({
-  fontVariationSettings: "'wght' 500",
+  maxWidth: tokens.maxWidth.text,
 });

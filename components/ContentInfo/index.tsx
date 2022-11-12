@@ -1,1 +1,1 @@
-export { ContentInfo } from "./ContentInfo";
+export * from "./ContentInfo";

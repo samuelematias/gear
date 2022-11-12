@@ -1,9 +1,9 @@
 import * as React from "react";
 import { createElement } from "react";
 import type { PolymorphicComponentProps } from "types";
-import type { Sprinkles } from "@/styles/sprinkles.css";
-import { sprinkles } from "@/styles/sprinkles.css";
-import clsx from "clsx";
+import type { Sprinkles } from "styles/sprinkles.css";
+import { sprinkles } from "styles/sprinkles.css";
+import { cn } from "lib/utils";
 
 export type BoxProps<C extends React.ElementType> = PolymorphicComponentProps<
   C,
@@ -21,23 +21,33 @@ export const Box = <C extends React.ElementType = "div">({
   paddingLeft,
   paddingX,
   paddingY,
+  margin,
+  marginTop,
+  marginRight,
+  marginBottom,
+  marginLeft,
+  marginX,
+  marginY,
   display,
   flexDirection,
   alignItems,
   justifyContent,
   placeItems,
+  flexShrink,
   gap,
   columnGap,
   rowGap,
+  columns,
   gridTemplateColumns,
-  gridColumnStart,
-  gridColumnEnd,
   width,
+  maxWidth,
   height,
   aspectRatio,
+  float,
+  textAlign,
   ...restProps
 }: BoxProps<C>) => {
-  const atomClasses = clsx(
+  const atomClasses = cn(
     sprinkles({
       position,
       padding,
@@ -47,20 +57,30 @@ export const Box = <C extends React.ElementType = "div">({
       paddingLeft,
       paddingX,
       paddingY,
+      margin,
+      marginTop,
+      marginRight,
+      marginBottom,
+      marginLeft,
+      marginX,
+      marginY,
       display,
       flexDirection,
       alignItems,
       justifyContent,
       placeItems,
+      flexShrink,
       gap,
       columnGap,
       rowGap,
+      columns,
       gridTemplateColumns,
-      gridColumnStart,
-      gridColumnEnd,
       width,
+      maxWidth,
       height,
       aspectRatio,
+      float,
+      textAlign,
     }),
     className
   );

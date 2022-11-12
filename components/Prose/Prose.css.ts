@@ -1,15 +1,20 @@
-// import { themeVars } from "@/styles/theme.css";
-import { tokens } from "@/styles/tokens.css";
-import { globalStyle } from "@vanilla-extract/css";
+import { style, globalStyle } from "@vanilla-extract/css";
+import { tokens } from "styles/tokens.css";
 
-globalStyle(".prose > * + *", {
-  marginTop: tokens.spacing.md,
+export const root = style({});
+
+globalStyle(`${root} > * + *`, {
+  marginBlockStart: tokens.spacing.md,
 });
 
-globalStyle(".prose > * + h2", {
-  marginTop: tokens.spacing.lg,
+globalStyle(`${root} > * + h2`, {
+  marginBlockStart: tokens.spacing.lg,
 });
 
-globalStyle(".prose > h2", {
-  fontSize: tokens.fontSize.lg,
+globalStyle(`${root} > * + h3`, {
+  marginBlockStart: tokens.spacing.lg,
+});
+
+globalStyle(`${root} strong`, {
+  fontVariationSettings: "'wght' 650",
 });

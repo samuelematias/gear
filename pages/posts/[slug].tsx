@@ -1,18 +1,24 @@
 import { NextPage } from "next/types";
 import { NextSeo } from "next-seo";
-import { format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { components } from "@/components/MDXComponents";
-import { Heading } from "@/components/Heading";
-import { Gallery } from "@/components/Gallery";
-import { Prose } from "@/components/Prose";
-import { Spacer } from "@/components/Spacer";
-import { Text } from "@/components/Text";
+import { formatDate } from "lib/utils";
+import { Box } from "components/Box";
+import { Heading } from "components/Heading";
+import { Meta } from "components/Meta";
+import { Prose } from "components/Prose";
+import { Text } from "components/Text";
+import { Spacer } from "components/Spacer";
+import { components } from "components/MDXComponents";
+import { Mosaic } from "components/Mosaic";
 
 export async function getStaticPaths() {
+  const posts = allPosts.filter((post) =>
+    process.env.VERCEL_ENV === "production" ? !post.draft : post
+  );
+
   return {
-    paths: allPosts.map((post) => ({ params: { slug: post.slug } })),
+    paths: posts.map((post) => ({ params: { slug: post.slug } })),
     fallback: false,
   };
 }
@@ -41,7 +47,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
         description={post.description}
         openGraph={{
           type: "article",
-          url: `https://gear.alexcarpenter.me/${post.slug}`,
+          url: `https://gear.alexcarpenter.me/posts/${post.slug}`,
           title: post.title,
           description: post.description,
           article: {
@@ -54,24 +60,47 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
           ],
         }}
       />
-      <article>
-        <Heading as="h1" fontSize="xl">
-          {post.title}
-        </Heading>
-        <Text as="time" dateTime={post.date} color="foregroundSecondary">
-          {format(parseISO(post.date), "LLLL d, yyyy")}
-        </Text>
-        <Spacer height="lg" />
+      <Box as="article" paddingX="md" marginY="xxl">
         {post.gallery ? (
           <>
-            <Gallery images={post.gallery} />
+            <Box maxWidth="lg" marginX="auto">
+              <Mosaic items={post.gallery} />
+            </Box>
             <Spacer height="lg" />
           </>
         ) : null}
-        <Prose>
-          <MDXContent components={components} />
-        </Prose>
-      </article>
+        <Box maxWidth="md" marginX="auto">
+          <Heading as="h1" fontSize="xxl">
+            {post.title}
+          </Heading>
+          <Meta
+            items={[
+              {
+                title: "Published",
+                description: (
+                  <Text
+                    as="time"
+                    dateTime={post.date}
+                    color="foregroundNeutral"
+                  >
+                    {formatDate(post.date)}
+                  </Text>
+                ),
+              },
+              {
+                title: "Category",
+                description: (
+                  <Text color="foregroundNeutral">#{post.category}</Text>
+                ),
+              },
+            ]}
+          />
+          <Spacer height="lg" />
+          <Prose>
+            <MDXContent components={components} />
+          </Prose>
+        </Box>
+      </Box>
     </>
   );
 };
