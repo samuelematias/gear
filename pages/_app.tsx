@@ -1,6 +1,7 @@
 import "the-new-css-reset";
 import "styles/app.css";
 import type { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 import { MotionConfig } from "framer-motion";
 import { DefaultSeo } from "next-seo";
@@ -48,6 +49,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </main>
         <ContentInfo />
         <Toaster />
+        <Analytics />
       </Providers>
     </>
   );

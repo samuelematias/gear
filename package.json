@@ -19,6 +19,7 @@
     "@vanilla-extract/css-utils": "^0.1.2",
     "@vanilla-extract/next-plugin": "^2.0.2",
     "@vanilla-extract/sprinkles": "^1.4.1",
+    "@vercel/analytics": "^0.1.4",
     "clsx": "^1.2.1",
     "contentlayer": "^0.2.7",
     "date-fns": "^2.29.1",
