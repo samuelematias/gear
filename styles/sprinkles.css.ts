@@ -24,10 +24,19 @@ export type Color = keyof typeof color;
 const width = {
   ...space,
   "1/1": "100%",
+  "4/3": "75%",
+  "2/3": "66.66666667%",
   "1/2": "50%",
-  "1/3": "33.33%",
-  "1/4": "24%",
-};
+  "1/3": "33.33333333%",
+  "1/4": "25%",
+} as const;
+
+const columns = {
+  "1/1": `repeat(1, 1fr)`,
+  "1/2": `repeat(2, 1fr)`,
+  "1/3": `repeat(3, 1fr)`,
+  "1/4": `repeat(4, 1fr)`,
+} as const;
 
 const responsiveProperties = defineProperties({
   conditions: {
@@ -38,7 +47,7 @@ const responsiveProperties = defineProperties({
   defaultCondition: "sm",
   properties: {
     position: ["relative", "absolute"],
-    display: ["none", "flex", "block", "inline"],
+    display: ["none", "flex", "inline-flex", "grid", "block", "inline"],
     flexDirection: ["row", "column", "row-reverse"],
     justifyContent: [
       "stretch",
@@ -49,6 +58,7 @@ const responsiveProperties = defineProperties({
       "space-between",
     ],
     alignItems: ["stretch", "flex-start", "center", "flex-end"],
+    placeItems: ["center"],
     paddingTop: space,
     paddingBottom: space,
     paddingLeft: space,
@@ -60,6 +70,7 @@ const responsiveProperties = defineProperties({
     gap: space,
     columnGap: space,
     rowGap: space,
+    gridTemplateColumns: columns,
     width,
     height: space,
     aspectRatio: ["1/1", "4/3", "16/9"],
@@ -76,6 +87,7 @@ const responsiveProperties = defineProperties({
     marginX: ["marginLeft", "marginRight"],
     marginY: ["marginTop", "marginBottom"],
     placeItems: ["justifyContent", "alignItems"],
+    columns: ["gridTemplateColumns"],
   },
 });
 

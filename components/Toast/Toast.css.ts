@@ -1,4 +1,4 @@
-import { style, keyframes } from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 import { themeVars } from "styles/theme.css";
 import { tokens } from "styles/tokens.css";
 
@@ -16,7 +16,7 @@ export const root = style({
   width: 350,
   padding: tokens.spacing.md,
   backgroundColor: themeVars.color.surface,
-  border: `1px solid ${themeVars.color.border}`,
+  border: `1px solid ${themeVars.color.borderNeutral}`,
   borderRadius: tokens.radius.md,
 });
 
@@ -27,7 +27,7 @@ export const title = style({
 
 export const description = style({
   fontSize: tokens.fontSize.sm,
-  color: themeVars.color.foregroundNeutral,
+  color: themeVars.color.foreground,
 });
 
 export const close = style({

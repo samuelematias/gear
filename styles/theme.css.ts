@@ -2,7 +2,7 @@ import {
   createGlobalThemeContract,
   createGlobalTheme,
 } from "@vanilla-extract/css";
-import { slate, slateDark, slateDarkA, blue } from "@radix-ui/colors";
+import { slate, slateDark, blue } from "@radix-ui/colors";
 
 export const themeVars = createGlobalThemeContract({
   color: {
