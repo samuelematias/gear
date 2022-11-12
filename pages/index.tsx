@@ -2,8 +2,6 @@ import { Box } from "components/Box";
 import { Entry } from "components/Entry";
 import { Heading } from "components/Heading";
 import { Marquee } from "components/Marquee";
-import { NewsletterForm } from "components/NewsletterForm";
-import { Text } from "components/Text";
 import { Spacer } from "components/Spacer";
 import { VisuallyHidden } from "components/VisuallyHidden";
 import type { Post } from "contentlayer/generated";
