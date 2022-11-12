@@ -23,10 +23,6 @@ class MyDocument extends Document {
             type="font/woff2"
             crossOrigin="anonymous"
           />
-          <link
-            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap"
-            rel="stylesheet"
-          />
         </Head>
         <body>
           <Main />
