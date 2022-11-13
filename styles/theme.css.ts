@@ -21,7 +21,7 @@ export const themeVars = createGlobalThemeContract({
   },
 });
 
-createGlobalTheme(":root.light", themeVars, {
+createGlobalTheme("[data-theme='light']", themeVars, {
   color: {
     page: slate.slate1,
     pageFaint: slate.slate3,
@@ -38,7 +38,7 @@ createGlobalTheme(":root.light", themeVars, {
   },
 });
 
-createGlobalTheme(":root.dark", themeVars, {
+createGlobalTheme("[data-theme='dark']", themeVars, {
   color: {
     page: slateDark.slate1,
     pageFaint: slateDark.slate3,

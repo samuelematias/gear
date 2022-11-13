@@ -26,7 +26,6 @@ const Providers = composeProviders(
   [
     ThemeProvider,
     {
-      attribute: "class",
       defaultTheme: "system",
       disableTransitionOnChange: true,
     },

@@ -1,6 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import { themeVars } from "styles/theme.css";
 import { tokens } from "styles/tokens.css";
+import { responsiveStyle } from "styles/utils";
 
 export const root = style({
   position: "relative",
@@ -12,5 +13,10 @@ export const root = style({
   backgroundColor: themeVars.color.pageFaint,
   textAlign: "center",
   display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
+  rowGap: tokens.spacing.lg,
+  ...responsiveStyle({
+    md: {
+      gridTemplateColumns: "repeat(3, 1fr)",
+    },
+  }),
 });

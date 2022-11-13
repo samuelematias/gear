@@ -2,6 +2,7 @@ import { Box } from "components/Box";
 import { Entry } from "components/Entry";
 import { Heading } from "components/Heading";
 import { Marquee } from "components/Marquee";
+import { NewsletterForm } from "components/NewsletterForm";
 import { Spacer } from "components/Spacer";
 import { VisuallyHidden } from "components/VisuallyHidden";
 import type { Post } from "contentlayer/generated";
@@ -178,6 +179,12 @@ export default function Home({ posts }: { posts: Post[] }) {
           })}
         </Box>
       </Box>
+
+      {/* <Box as="section" paddingX="md" marginY="xxl">
+        <Box marginX="auto" maxWidth="lg">
+          <NewsletterForm />
+        </Box>
+      </Box> */}
     </>
   );
 }

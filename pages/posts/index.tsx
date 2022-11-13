@@ -1,3 +1,4 @@
+import { NextSeo } from "next-seo";
 import { Box } from "components/Box";
 import { Entry } from "components/Entry";
 import { Spacer } from "components/Spacer";
@@ -20,6 +21,12 @@ export async function getStaticProps() {
 export default function Home({ posts }: { posts: Post[] }) {
   return (
     <>
+      <NextSeo
+        title="Posts"
+        openGraph={{
+          title: "Posts",
+        }}
+      />
       <Box as="section" paddingX="md" marginY="xxl">
         <Box as="ul" marginX="auto" maxWidth="md">
           {posts.map((post, index) => {

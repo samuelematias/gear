@@ -97,6 +97,7 @@ const unresponsiveProperties = defineProperties({
     textTransform: ["none", "uppercase"],
     letterSpacing,
     flexShrink: [0],
+    flexGrow: [1],
   },
 });
 
