@@ -76,6 +76,11 @@ export const Page = defineDocumentType(() => ({
       type: "date",
       required: true,
     },
+    gallery: {
+      type: "list",
+      of: Image,
+      required: false,
+    },
   },
   computedFields: {
     slug: {

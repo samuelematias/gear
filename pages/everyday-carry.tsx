@@ -7,6 +7,7 @@ import { NextSeo } from "next-seo";
 import { Box } from "components/Box";
 import { Heading } from "components/Heading";
 import { Meta } from "components/Meta";
+import { Mosaic } from "components/Mosaic";
 import { Prose } from "components/Prose";
 import { Text } from "components/Text";
 import { Spacer } from "components/Spacer";
@@ -27,9 +28,14 @@ const EdcPage: NextPage<{ page: Page }> = ({ page }) => {
     <>
       <NextSeo title={page.title} />
       <Box as="article" paddingX="md" marginY="xxl">
-        {/* <Box maxWidth="lg" marginX="auto" marginBottom="lg">
-          <Mosaic />
-        </Box> */}
+        {page.gallery ? (
+          <>
+            <Box maxWidth="lg" marginX="auto">
+              <Mosaic items={page.gallery} />
+            </Box>
+            <Spacer height="lg" />
+          </>
+        ) : null}
         <Box maxWidth="md" marginX="auto">
           <Heading as="h1" fontSize="xxl">
             {page.title}
