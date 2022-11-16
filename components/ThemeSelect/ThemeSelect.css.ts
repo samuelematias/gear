@@ -6,13 +6,14 @@ import { tokens } from "styles/tokens.css";
 export const root = style({
   position: "relative",
   display: "inline-flex",
+  height: "2rem",
 });
 
 export const icon = style({
   position: "absolute",
   display: "grid",
   placeItems: "center",
-  left: tokens.spacing.xs,
+  left: tokens.spacing.sm,
   top: 0,
   width: tokens.spacing.md,
   height: "100%",
@@ -25,10 +26,11 @@ export const select = style({
   paddingTop: tokens.spacing.xs,
   paddingBottom: tokens.spacing.xs,
   paddingRight: calc.add(
-    calc.multiply(tokens.spacing.xs, 2),
+    calc.multiply(tokens.spacing.sm, 2),
     tokens.spacing.md
   ),
-  paddingLeft: calc.add(calc.multiply(tokens.spacing.xs, 2), tokens.spacing.md),
+  paddingLeft: calc.add(calc.multiply(tokens.spacing.sm, 2), tokens.spacing.md),
+  height: "2rem",
   fontSize: tokens.fontSize.sm,
   borderRadius: tokens.radius.md,
   textAlign: "left",
@@ -47,7 +49,7 @@ export const arrow = style({
   position: "absolute",
   display: "grid",
   placeItems: "center",
-  right: tokens.spacing.xs,
+  right: tokens.spacing.sm,
   top: 0,
   width: tokens.spacing.md,
   height: "100%",
