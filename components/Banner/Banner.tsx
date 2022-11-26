@@ -39,7 +39,7 @@ const Banner = () => {
               Posts
             </a>
           </Link>
-          <Link href="/everyday-carry">
+          {/* <Link href="/everyday-carry">
             <a
               className={styles.anchor}
               aria-current={
@@ -54,7 +54,7 @@ const Banner = () => {
               ) : null}
               EDC
             </a>
-          </Link>
+          </Link> */}
         </div>
 
         <div className={styles.group}>
