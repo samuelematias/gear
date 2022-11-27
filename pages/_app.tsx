@@ -2,7 +2,6 @@ import "the-new-css-reset";
 import "styles/app.css";
 import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
-import Head from "next/head";
 import { MotionConfig } from "framer-motion";
 import { DefaultSeo } from "next-seo";
 import SEO from "next-seo.config";
@@ -39,9 +38,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Providers>
         <DefaultSeo {...SEO} />
-        <Head>
-          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        </Head>
         <Banner />
         <main id="main">
           <Component {...pageProps} />
