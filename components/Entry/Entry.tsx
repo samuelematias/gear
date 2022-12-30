@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { Box } from "components/Box";
 import { Heading } from "components/Heading";
@@ -56,8 +56,8 @@ const Entry = ({
           ) : null}
           <Spacer height="xs" />
           <Heading as="h3" fontSize="xl" style={{ lineHeight: 1.2 }}>
-            <Link href={`/posts/${slug}`}>
-              <a className={styles.anchor}>{heading}</a>
+            <Link href={`/posts/${slug}`} className={styles.anchor}>
+              {heading}
             </Link>
           </Heading>
           {description ? (

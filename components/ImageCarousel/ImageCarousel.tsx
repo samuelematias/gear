@@ -1,7 +1,7 @@
 import * as React from "react";
 import { motion, MotionConfig, AnimatePresence } from "framer-motion";
-import type { ImageProps } from "next/image";
-import Image from "next/image";
+import type { ImageProps } from "next/legacy/image";
+import Image from "next/legacy/image";
 import { cn } from "lib/utils";
 import { ArrowRight, ArrowLeft } from "react-feather";
 import { useRovingIndex } from "use-roving-index";

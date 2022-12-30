@@ -1,5 +1,5 @@
 import type { Sprinkles } from "styles/sprinkles.css";
-import NextImage from "next/image";
+import NextImage from "next/legacy/image";
 import { Box } from "components/Box";
 
 interface ImageProps {

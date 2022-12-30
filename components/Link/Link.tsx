@@ -6,15 +6,7 @@ import * as styles from "./Link.css";
 export type LinkProps = NextLinkProps;
 
 const Link = (props: LinkProps) => {
-  const { href, ...rest } = props;
-  const isInternalLink =
-    href &&
-    (href.toString().startsWith("/") || href.toString().startsWith("#"));
-  return (
-    <NextLink href={href}>
-      <a {...rest} className={cn(styles.root)} />
-    </NextLink>
-  );
+  return <NextLink {...props} className={cn(styles.root)} />;
 };
 
 export { Link };
