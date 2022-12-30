@@ -1,4 +1,4 @@
-// import slugify from "@sindresorhus/slugify";
+import { formatDate } from "./lib/utils";
 import {
   defineDocumentType,
   defineNestedType,
@@ -10,8 +10,8 @@ const Image = defineNestedType(() => ({
   name: "Image",
   fields: {
     src: { type: "string", required: true },
-    width: { type: "number", required: true },
-    height: { type: "number", required: true },
+    width: { type: "number", required: false },
+    height: { type: "number", required: false },
     alt: { type: "string", required: true },
   },
 }));
@@ -56,6 +56,10 @@ export const Post = defineDocumentType(() => ({
       type: "string",
       resolve: (post: any) => post._raw.sourceFileName.replace(/\.mdx$/, ""),
     },
+    dateFormatted: {
+      type: "string",
+      resolve: (post: any) => formatDate(post.date),
+    },
   },
 }));
 
@@ -65,6 +69,14 @@ export const Page = defineDocumentType(() => ({
   contentType: "mdx",
   fields: {
     title: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+      required: false,
+    },
+    thumbnail: {
       type: "string",
       required: true,
     },

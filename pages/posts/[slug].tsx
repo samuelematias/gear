@@ -5,12 +5,12 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import { formatDate } from "lib/utils";
 import { Box } from "components/Box";
 import { Heading } from "components/Heading";
+import { ImageCarousel } from "components/ImageCarousel";
 import { Meta } from "components/Meta";
 import { Prose } from "components/Prose";
 import { Text } from "components/Text";
 import { Spacer } from "components/Spacer";
 import { components } from "components/MDXComponents";
-import { Mosaic } from "components/Mosaic";
 
 export async function getStaticPaths() {
   const posts = allPosts.filter((post) =>
@@ -64,7 +64,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
         {post.gallery ? (
           <>
             <Box maxWidth="lg" marginX="auto">
-              <Mosaic items={post.gallery} />
+              <ImageCarousel aspectRatio="16/9" items={post.gallery} />
             </Box>
             <Spacer height="lg" />
           </>
@@ -83,7 +83,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
                     dateTime={post.date}
                     color="foregroundNeutral"
                   >
-                    {formatDate(post.date)}
+                    {post.dateFormatted}
                   </Text>
                 ),
               },

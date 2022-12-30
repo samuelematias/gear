@@ -6,6 +6,7 @@ export const root = style({
   width: "100%",
   paddingLeft: tokens.spacing.md,
   paddingRight: tokens.spacing.md,
+  borderTop: "4px solid",
   borderBottom: "1px solid",
   borderColor: themeVars.color.borderNeutral,
 });
@@ -30,7 +31,6 @@ export const anchor = style({
   placeItems: "center",
   paddingTop: tokens.spacing.md,
   paddingBottom: tokens.spacing.md,
-  borderTop: "4px solid transparent",
   ":focus": {
     outline: "transparent",
   },

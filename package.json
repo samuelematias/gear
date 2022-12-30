@@ -34,6 +34,7 @@
     "react-feather": "^2.0.10",
     "remark-gfm": "^3.0.1",
     "the-new-css-reset": "^1.7.2",
+    "use-roving-index": "^2.0.0",
     "zustand": "^4.1.4"
   },
   "devDependencies": {

@@ -1,4 +1,5 @@
 import { Heading } from "components/Heading";
+import { ImageCarousel } from "components/ImageCarousel";
 import { Link } from "components/Link";
 import { Text } from "components/Text";
 import { HorizontalRule } from "./HorizontalRule/HorizontalRule";
@@ -14,4 +15,5 @@ export const components = {
   a: (props: any) => <Link {...props} />,
   hr: () => <HorizontalRule />,
   Image,
+  ImageCarousel,
 };
