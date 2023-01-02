@@ -31,7 +31,7 @@ const Banner = () => {
             ) : null}
             Posts
           </Link>
-          <Link
+          {/* <Link
             href="/newsletter"
             className={styles.anchor}
             aria-current={
@@ -42,7 +42,7 @@ const Banner = () => {
               <motion.span layoutId="highlight" className={styles.highlight} />
             ) : null}
             Newsletter
-          </Link>
+          </Link> */}
         </div>
 
         <div className={styles.group}>
