@@ -2,7 +2,6 @@ import { NextPage } from "next/types";
 import { NextSeo } from "next-seo";
 import { allPosts, Post } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { formatDate } from "lib/utils";
 import { Box } from "components/Box";
 import { Heading } from "components/Heading";
 import { ImageCarousel } from "components/ImageCarousel";
@@ -51,7 +50,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
           title: post.title,
           description: post.description,
           article: {
-            publishedTime: post.date,
+            publishedTime: post.published,
           },
           images: [
             {
@@ -80,7 +79,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
                 description: (
                   <Text
                     as="time"
-                    dateTime={post.date}
+                    dateTime={post.published}
                     color="foregroundNeutral"
                   >
                     {post.dateFormatted}
