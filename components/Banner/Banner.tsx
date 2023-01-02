@@ -31,22 +31,18 @@ const Banner = () => {
             ) : null}
             Posts
           </Link>
-          {/* <Link href="/everyday-carry">
-            <a
-              className={styles.anchor}
-              aria-current={
-                router.pathname === "/everyday-carry" ? "page" : undefined
-              }
-            >
-              {router.pathname === "/everyday-carry" ? (
-                <motion.span
-                  layoutId="highlight"
-                  className={styles.highlight}
-                />
-              ) : null}
-              EDC
-            </a>
-          </Link> */}
+          <Link
+            href="/newsletter"
+            className={styles.anchor}
+            aria-current={
+              router.pathname === "/newsletter" ? "page" : undefined
+            }
+          >
+            {router.pathname === "/newsletter" ? (
+              <motion.span layoutId="highlight" className={styles.highlight} />
+            ) : null}
+            Newsletter
+          </Link>
         </div>
 
         <div className={styles.group}>

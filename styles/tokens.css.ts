@@ -35,6 +35,7 @@ export const tokens = createGlobalTheme(":root", {
     wide: ".02em",
   },
   maxWidth: {
+    sm: "32rem",
     md: "48rem",
     lg: "64rem",
     text: "68ch",

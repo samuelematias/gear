@@ -9,4 +9,13 @@ export const root = style({
   borderColor: themeVars.color.border,
   backgroundColor: themeVars.color.surface,
   borderRadius: tokens.radius.md,
+  ":focus": {
+    outline: "transparent",
+  },
+  ":focus-visible": {
+    outlineWidth: "2px",
+    outlineStyle: "solid",
+    outlineOffset: "2px",
+    outlineColor: themeVars.color.outline,
+  },
 });

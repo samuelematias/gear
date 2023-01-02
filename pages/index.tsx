@@ -4,13 +4,16 @@ import { Heading } from "components/Heading";
 import { Marquee } from "components/Marquee";
 import { NewsletterForm } from "components/NewsletterForm";
 import { Spacer } from "components/Spacer";
+import { Text } from "components/Text";
 import { VisuallyHidden } from "components/VisuallyHidden";
 import type { Post } from "contentlayer/generated";
 import { allPosts } from "contentlayer/generated";
 
 export async function getStaticProps() {
   const posts = allPosts
-    .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)))
+    .sort(
+      (a, b) => Number(new Date(b.published)) - Number(new Date(a.published))
+    )
     .filter((post) =>
       process.env.VERCEL_ENV === "production" ? !post.draft : post
     );
@@ -181,7 +184,15 @@ export default function Home({ posts }: { posts: Post[] }) {
       </Box>
 
       {/* <Box as="section" paddingX="md" marginY="xxl">
-        <Box marginX="auto" maxWidth="lg">
+        <Box marginX="auto" maxWidth="sm">
+          <Heading>Join the newsletter</Heading>
+          <Spacer height="sm" />
+          <Text color="foregroundNeutral">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil
+            rerum laborum quae, dolor adipisci laudantium praesentium! Optio
+            odio praesentium nesciunt?
+          </Text>
+          <Spacer height="md" />
           <NewsletterForm />
         </Box>
       </Box> */}

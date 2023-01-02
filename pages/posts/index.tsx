@@ -7,7 +7,9 @@ import { allPosts } from "contentlayer/generated";
 
 export async function getStaticProps() {
   const posts = allPosts
-    .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)))
+    .sort(
+      (a, b) => Number(new Date(b.published)) - Number(new Date(a.published))
+    )
     .filter((post) =>
       process.env.VERCEL_ENV === "production" ? !post.draft : post
     );

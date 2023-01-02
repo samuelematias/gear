@@ -27,7 +27,7 @@ export const Post = defineDocumentType(() => ({
     },
     category: {
       type: "enum",
-      options: ["Interview", "Gear", "Everyday Carry"],
+      options: ["Interview", "Gear"],
     },
     thumbnail: {
       type: "string",
@@ -41,9 +41,13 @@ export const Post = defineDocumentType(() => ({
       type: "string",
       required: false,
     },
-    date: {
+    published: {
       type: "date",
       required: true,
+    },
+    updated: {
+      type: "date",
+      required: false,
     },
     gallery: {
       type: "list",
@@ -58,53 +62,14 @@ export const Post = defineDocumentType(() => ({
     },
     dateFormatted: {
       type: "string",
-      resolve: (post: any) => formatDate(post.date),
-    },
-  },
-}));
-
-export const Page = defineDocumentType(() => ({
-  name: "Page",
-  filePathPattern: `pages/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: {
-      type: "string",
-      required: true,
-    },
-    description: {
-      type: "string",
-      required: false,
-    },
-    thumbnail: {
-      type: "string",
-      required: true,
-    },
-    published: {
-      type: "date",
-      required: true,
-    },
-    updated: {
-      type: "date",
-      required: true,
-    },
-    gallery: {
-      type: "list",
-      of: Image,
-      required: false,
-    },
-  },
-  computedFields: {
-    slug: {
-      type: "string",
-      resolve: (page: any) => page._raw.sourceFileName.replace(/\.mdx$/, ""),
+      resolve: (post: any) => formatDate(post.published),
     },
   },
 }));
 
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Page, Post],
+  documentTypes: [Post],
   mdx: {
     remarkPlugins: [remarkGfm],
   },
