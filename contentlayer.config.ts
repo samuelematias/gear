@@ -29,6 +29,13 @@ export const Post = defineDocumentType(() => ({
       type: "enum",
       options: ["Interview", "Gear"],
     },
+    tags: {
+      type: "list",
+      of: {
+        type: "string",
+      },
+      required: false,
+    },
     thumbnail: {
       type: "string",
       required: true,

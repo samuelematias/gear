@@ -183,19 +183,17 @@ export default function Home({ posts }: { posts: Post[] }) {
         </Box>
       </Box>
 
-      {/* <Box as="section" paddingX="md" marginY="xxl">
+      <Box as="section" paddingX="md" marginY="xxl">
         <Box marginX="auto" maxWidth="sm">
           <Heading>Join the newsletter</Heading>
           <Spacer height="sm" />
           <Text color="foregroundNeutral">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil
-            rerum laborum quae, dolor adipisci laudantium praesentium! Optio
-            odio praesentium nesciunt?
+            Get notified when new interviews are published. No spam.
           </Text>
           <Spacer height="md" />
           <NewsletterForm />
         </Box>
-      </Box> */}
+      </Box>
     </>
   );
 }
