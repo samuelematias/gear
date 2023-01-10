@@ -4,10 +4,10 @@ import { themeVars } from "styles/theme.css";
 export const root = style({
   color: "inherit",
   textDecoration: "underline",
-  textDecorationColor: themeVars.color.border,
+  textDecorationColor: themeVars.color.highlight,
   textDecorationThickness: 2,
   ":hover": {
-    textDecorationColor: themeVars.color.highlight,
+    textDecorationColor: themeVars.color.border,
   },
   ":focus": {
     outline: "transparent",
