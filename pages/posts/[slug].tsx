@@ -81,6 +81,8 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
                     as="time"
                     dateTime={post.published}
                     color="foregroundNeutral"
+                    fontSize="sm"
+                    fontFamily="mono"
                   >
                     {post.dateFormatted}
                   </Text>
@@ -89,7 +91,13 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
               {
                 title: "Category",
                 description: (
-                  <Text color="foregroundNeutral">#{post.category}</Text>
+                  <Text
+                    color="foregroundNeutral"
+                    fontSize="sm"
+                    fontFamily="mono"
+                  >
+                    #{post.category}
+                  </Text>
                 ),
               },
             ]}

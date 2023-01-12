@@ -1,8 +1,9 @@
 import { createGlobalTheme } from "@vanilla-extract/css";
 
 export const tokens = createGlobalTheme(":root", {
-  font: {
+  fontFamily: {
     sans: "'Inter var', sans-serif",
+    mono: "'JetBrains Mono NL', monospace",
   },
   fontSize: {
     sm: "0.875rem",

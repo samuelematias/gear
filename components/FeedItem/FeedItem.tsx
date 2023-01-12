@@ -15,7 +15,13 @@ const FeedItem = ({ date, slug, body }: Feed) => {
         <MDXContent components={components} />
       </Prose>
       <Spacer height="md" />
-      <Text as="time" dateTime={date} fontSize="sm" color="foregroundNeutral">
+      <Text
+        as="time"
+        dateTime={date}
+        fontSize="sm"
+        fontFamily="mono"
+        color="foregroundNeutral"
+      >
         {formatDateTime(date)}
       </Text>
     </article>

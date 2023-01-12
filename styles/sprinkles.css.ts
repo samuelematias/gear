@@ -21,6 +21,9 @@ export type LetterSpacing = keyof typeof letterSpacing;
 const color = themeVars.color;
 export type Color = keyof typeof color;
 
+const fontFamily = tokens.fontFamily;
+export type FontFamily = keyof typeof fontFamily;
+
 const width = {
   ...space,
   "1/1": "100%",
@@ -93,6 +96,7 @@ const responsiveProperties = defineProperties({
 
 const unresponsiveProperties = defineProperties({
   properties: {
+    fontFamily,
     color,
     textTransform: ["none", "uppercase"],
     letterSpacing,

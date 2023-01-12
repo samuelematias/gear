@@ -50,6 +50,7 @@ const Entry = ({
               textTransform="uppercase"
               letterSpacing="wide"
               fontSize="sm"
+              fontFamily="mono"
             >
               {category}
             </Text>

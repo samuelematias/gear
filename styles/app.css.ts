@@ -9,6 +9,13 @@ globalFontFace("Inter var", {
   src: 'url(/fonts/Inter.var.woff2) format("woff2")',
 });
 
+globalFontFace("JetBrains Mono NL", {
+  fontStyle: "normal",
+  fontWeight: "400",
+  fontDisplay: "swap",
+  src: 'url(/fonts/JetBrainsMono-Regular.woff2) format("woff2")',
+});
+
 globalStyle("html", {
   lineHeight: 1.45,
   WebkitTextSizeAdjust: "100%",
@@ -25,7 +32,7 @@ globalStyle("body", {
   WebkitFontSmoothing: "antialiased",
   MozOsxFontSmoothing: "grayscale",
   textRendering: "optimizeLegibility",
-  fontFamily: tokens.font.sans,
+  fontFamily: tokens.fontFamily.sans,
   backgroundColor: themeVars.color.page,
   color: themeVars.color.foreground,
 });

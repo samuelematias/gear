@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Twitter, Facebook, Link } from "react-feather";
 import { SocialShare } from "components/SocialShare";
 import * as styles from "./Meta.css";
 
