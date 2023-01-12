@@ -31,6 +31,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
+    "react-lite-youtube-embed": "^2.3.52",
     "react-wrap-balancer": "^0.3.0",
     "remark-gfm": "^3.0.1",
     "the-new-css-reset": "^1.7.2",

@@ -4,6 +4,7 @@ import { Link } from "components/Link";
 import { Text } from "components/Text";
 import { HorizontalRule } from "./HorizontalRule/HorizontalRule";
 import { Image } from "./Image";
+import { YoutubeEmbed } from "components/YoutubeEmbed";
 
 export const components = {
   h2: (props: any) => <Heading {...props} fontSize="lg" />,
@@ -16,4 +17,5 @@ export const components = {
   hr: () => <HorizontalRule />,
   Image,
   ImageCarousel,
+  YoutubeEmbed,
 };
