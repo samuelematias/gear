@@ -31,6 +31,16 @@ const Banner = () => {
             ) : null}
             Posts
           </Link>
+          <Link
+            href="/feed"
+            className={styles.anchor}
+            aria-current={router.pathname === "/feed" ? "page" : undefined}
+          >
+            {router.pathname === "/feed" ? (
+              <motion.span layoutId="highlight" className={styles.highlight} />
+            ) : null}
+            Feed
+          </Link>
           {/* <Link
             href="/newsletter"
             className={styles.anchor}

@@ -16,6 +16,9 @@ const Image = defineNestedType(() => ({
   },
 }));
 
+////////////////////////////////////////////////////////////////////////////////
+// Posts
+
 export const Post = defineDocumentType(() => ({
   name: "Post",
   filePathPattern: `posts/*.mdx`,
@@ -74,9 +77,30 @@ export const Post = defineDocumentType(() => ({
   },
 }));
 
+////////////////////////////////////////////////////////////////////////////////
+// Feed
+
+export const Feed = defineDocumentType(() => ({
+  name: "Feed",
+  filePathPattern: `feed/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    date: {
+      type: "date",
+      required: true,
+    },
+  },
+  computedFields: {
+    slug: {
+      type: "string",
+      resolve: (post) => post._raw.sourceFileName.replace(/\.mdx$/, ""),
+    },
+  },
+}));
+
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Post],
+  documentTypes: [Feed, Post],
   mdx: {
     remarkPlugins: [remarkGfm],
   },

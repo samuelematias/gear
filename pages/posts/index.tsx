@@ -1,6 +1,7 @@
 import { NextSeo } from "next-seo";
 import { Box } from "components/Box";
 import { Entry } from "components/Entry";
+import { PageHeader } from "components/PageHeader";
 import { Spacer } from "components/Spacer";
 import type { Post } from "contentlayer/generated";
 import { allPosts } from "contentlayer/generated";
@@ -29,6 +30,7 @@ export default function Home({ posts }: { posts: Post[] }) {
           title: "Posts",
         }}
       />
+      <PageHeader heading="Posts" />
       <Box as="section" paddingX="md" marginY="xxl">
         <Box as="ul" marginX="auto" maxWidth="md">
           {posts.map((post, index) => {

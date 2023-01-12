@@ -14,6 +14,7 @@ const Marquee = ({ children }: { children: React.ReactNode }) => {
         ease: "linear",
       },
     });
+    return () => controls.stop();
   }, [controls]);
 
   return (
