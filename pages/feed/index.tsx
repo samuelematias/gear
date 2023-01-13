@@ -22,15 +22,16 @@ export default function Feed({ feed }: { feed: Feed[] }) {
     <>
       <NextSeo
         title="Feed"
-        description="Pocket dumps, industry news, updates and links."
+        description="Short form updates, pocket dumps, industry news, and links."
         openGraph={{
           title: "Feed",
-          description: "Pocket dumps, industry news, updates and links.",
+          description:
+            "Short form updates, pocket dumps, industry news, and links.",
         }}
       />
       <PageHeader
         heading="Feed"
-        description="Pocket dumps, industry news, updates and links."
+        description="Short form updates, pocket dumps, industry news, and links."
       />
       <Box as="section" paddingX="md" marginY="xxl">
         <Box as="ul" marginX="auto" maxWidth="md">
