@@ -28,7 +28,11 @@ export default function Kit({ kit }: { kit: Kit[] }) {
       <Box as="section" paddingX="md" marginY="xxl">
         <Box
           display="grid"
-          gridTemplateColumns="1/3"
+          gridTemplateColumns={{
+            sm: "1/1",
+            md: "1/2",
+            lg: "1/3",
+          }}
           gap="sm"
           rowGap="lg"
           maxWidth="lg"
