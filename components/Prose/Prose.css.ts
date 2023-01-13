@@ -26,6 +26,6 @@ globalStyle(`${root} ul`, {
   rowGap: tokens.spacing.xs,
 });
 
-globalStyle(`${root} ul li:marker`, {
+globalStyle(`${root} ul li::marker`, {
   content: "initial",
 });

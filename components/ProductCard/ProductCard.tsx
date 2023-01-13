@@ -1,5 +1,6 @@
 import type { Kit } from "contentlayer/generated";
 import Image from "next/legacy/image";
+import { ExternalLink } from "react-feather";
 import { Heading } from "components/Heading";
 import { Text } from "components/Text";
 import { Spacer } from "components/Spacer";
@@ -16,10 +17,17 @@ const ProductCard = ({ name, brand }: Kit) => {
         alt=""
       />
       <Spacer height="xs" /> */}
-      <Text fontFamily="mono" fontSize="sm" color="foregroundNeutral">
-        {brand}
-      </Text>
-      <Heading>{name}</Heading>
+      <div className={styles.info}>
+        <span>
+          <Text fontFamily="mono" fontSize="sm" color="foregroundNeutral">
+            {brand}
+          </Text>
+          <Heading>{name}</Heading>
+        </span>
+        <span className={styles.icon}>
+          <ExternalLink width={".8em"} />
+        </span>
+      </div>
     </a>
   );
 };
