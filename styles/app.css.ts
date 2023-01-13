@@ -16,6 +16,13 @@ globalFontFace("JetBrains Mono NL", {
   src: 'url(/fonts/JetBrainsMono-Regular.woff2) format("woff2")',
 });
 
+globalFontFace("JetBrains Mono NL", {
+  fontStyle: "normal",
+  fontWeight: "700",
+  fontDisplay: "swap",
+  src: 'url(/fonts/JetBrainsMono-Bold.woff2) format("woff2")',
+});
+
 globalStyle("html", {
   lineHeight: 1.45,
   WebkitTextSizeAdjust: "100%",
