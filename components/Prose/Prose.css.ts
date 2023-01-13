@@ -18,3 +18,14 @@ globalStyle(`${root} > * + h3`, {
 globalStyle(`${root} strong`, {
   fontVariationSettings: "'wght' 650",
 });
+
+globalStyle(`${root} ul`, {
+  listStyleType: "disc",
+  paddingLeft: "1rem",
+  display: "grid",
+  rowGap: tokens.spacing.xs,
+});
+
+globalStyle(`${root} ul li::marker`, {
+  content: "initial",
+});

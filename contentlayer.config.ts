@@ -5,6 +5,7 @@ import {
   makeSource,
 } from "contentlayer/source-files";
 import remarkGfm from "remark-gfm";
+import { m } from "framer-motion";
 
 const Image = defineNestedType(() => ({
   name: "Image",
@@ -98,9 +99,42 @@ export const Feed = defineDocumentType(() => ({
   },
 }));
 
+////////////////////////////////////////////////////////////////////////////////
+// Kit
+
+export const Kit = defineDocumentType(() => ({
+  name: "Kit",
+  filePathPattern: `kit/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    name: {
+      type: "string",
+      required: true,
+    },
+    brand: {
+      type: "string",
+      required: true,
+    },
+    link: {
+      type: "string",
+      required: true,
+    },
+    category: {
+      type: "enum",
+      options: ["Knife", "Flashlight", "Bag", "Pouch", "Watch"],
+    },
+  },
+  computedFields: {
+    slug: {
+      type: "string",
+      resolve: (post) => post._raw.sourceFileName.replace(/\.mdx$/, ""),
+    },
+  },
+}));
+
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Feed, Post],
+  documentTypes: [Kit, Feed, Post],
   mdx: {
     remarkPlugins: [remarkGfm],
   },

@@ -42,6 +42,16 @@ const Banner = () => {
             Feed
           </Link>
           {/* <Link
+            href="/kit"
+            className={styles.anchor}
+            aria-current={router.pathname === "/kit" ? "page" : undefined}
+          >
+            {router.pathname === "/kit" ? (
+              <motion.span layoutId="highlight" className={styles.highlight} />
+            ) : null}
+            Kit
+          </Link> */}
+          {/* <Link
             href="/newsletter"
             className={styles.anchor}
             aria-current={
