@@ -15,7 +15,7 @@ export interface FeatureProps {
 const Feature = ({ image, heading, description, slug }: FeatureProps) => {
   return (
     <Link href={`/posts/${slug}`} className={styles.root}>
-      <Image className={styles.image} src={image} fill alt="" />
+      <Image className={styles.image} src={image} fill priority alt="" />
       <span className={styles.overlay} />
       <div className={styles.content}>
         <Heading fontSize={{ sm: "xl", md: "xxl" }} className={styles.heading}>
