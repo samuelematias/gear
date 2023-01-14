@@ -8,9 +8,16 @@ export const root = style({
   position: "relative",
   display: "grid",
   width: "100%",
-  aspectRatio: "16/9",
   borderRadius: tokens.radius.lg,
   overflow: "hidden",
+  ...responsiveStyle({
+    sm: {
+      aspectRatio: tokens.aspectRatio["4/3"],
+    },
+    md: {
+      aspectRatio: tokens.aspectRatio["16/9"],
+    },
+  }),
   ":focus": {
     outline: "transparent",
   },

@@ -8,14 +8,14 @@ import * as styles from "./ProductCard.css";
 const ProductCard = ({ name, brand }: Kit) => {
   return (
     <a href="" className={styles.root}>
-      <Image
+      {/* <Image
         src="/img/benchmade-bugouts.jpeg"
         width={800}
         height={800}
         objectFit="cover"
         alt=""
       />
-      <Spacer height="xs" />
+      <Spacer height="xs" /> */}
       <div className={styles.info}>
         <Text fontFamily="mono" fontSize="sm" color="foregroundNeutral">
           {brand}&nbsp;
