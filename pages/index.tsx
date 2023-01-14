@@ -1,7 +1,7 @@
 import { Box } from "components/Box";
 import { Entry } from "components/Entry";
 import { Heading } from "components/Heading";
-import { Feature } from "components/Feature";
+import { Feature, type FeatureProps } from "components/Feature";
 import { Marquee } from "components/Marquee";
 import { NewsletterForm } from "components/NewsletterForm";
 import { Spacer } from "components/Spacer";
@@ -20,21 +20,34 @@ export async function getStaticProps() {
     );
   return {
     props: {
+      feature: {
+        slug: "/favorite-gear-2022",
+        image: "/img/2022-favorite-gear-5.jpeg",
+        heading: "Favorite Gear of 2022",
+        description:
+          "Five of my favorite pieces of new to me gear of 2022. Happy new year!",
+      },
       posts,
     },
   };
 }
 
-export default function Home({ posts }: { posts: Post[] }) {
+export default function Home({
+  posts,
+  feature,
+}: {
+  feature: FeatureProps;
+  posts: Post[];
+}) {
   return (
     <>
       <Box as="section" paddingX="md" marginY="xxl">
         <Box marginX="auto" maxWidth="lg">
           <Feature
-            slug="/favorite-gear-2022"
-            image="/img/2022-favorite-gear-5.jpeg"
-            heading="Favorite Gear of 2022"
-            description="Five of my favorite pieces of new to me gear of 2022. Happy new year!"
+            slug={feature.slug}
+            image={feature.image}
+            heading={feature.heading}
+            description={feature.description}
           />
           <Spacer height="lg" />
           <Box as="header" textAlign="center" marginBottom="lg">

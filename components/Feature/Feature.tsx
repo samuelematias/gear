@@ -5,7 +5,7 @@ import { Text } from "components/Text";
 import { Spacer } from "components/Spacer";
 import * as styles from "./Feature.css";
 
-interface FeatureProps {
+export interface FeatureProps {
   image: string;
   heading: string;
   description: string;
