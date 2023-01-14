@@ -121,7 +121,7 @@ export const Kit = defineDocumentType(() => ({
     },
     category: {
       type: "enum",
-      options: ["Knife", "Flashlight", "Bag", "Pouch", "Watch"],
+      options: ["Knife", "Flashlight", "Bag", "Pouch", "Watch", "Outerwear"],
     },
   },
   computedFields: {

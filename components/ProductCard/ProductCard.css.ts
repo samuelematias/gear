@@ -18,12 +18,9 @@ export const root = style({
 
 export const info = style({
   position: "relative",
-  display: "flex",
-  justifyContent: "space-between",
-  gap: tokens.spacing.sm,
 });
 
-export const icon = style({
+export const labelArrow = style({
   opacity: 0,
   transition: "opacity ease-in-out 0.2s",
   selectors: {

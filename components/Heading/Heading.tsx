@@ -20,11 +20,12 @@ export const Heading = <C extends React.ElementType = "p">({
   as,
   fontSize = "md",
   color = "foreground",
-  ...restProps
+  ...props
 }: HeadingProps<C>) => {
   const component = as || "h2";
+  const { className, ...restProps } = props;
   return React.createElement(component, {
-    className: cn(styles.root, sprinkles({ fontSize, color })),
+    className: cn(styles.root, sprinkles({ fontSize, color }), className),
     ...restProps,
   });
 };

@@ -28,13 +28,15 @@ export const Text = <C extends React.ElementType = "p">({
   letterSpacing,
   textTransform,
   color = "foreground",
-  ...restProps
+  ...props
 }: TextProps<C>) => {
   const component = as || "p";
+  const { className, ...restProps } = props;
   return React.createElement(component, {
     className: cn(
       styles.root,
-      sprinkles({ fontSize, fontFamily, letterSpacing, textTransform, color })
+      sprinkles({ fontSize, fontFamily, letterSpacing, textTransform, color }),
+      className
     ),
     ...restProps,
   });

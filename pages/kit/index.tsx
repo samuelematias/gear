@@ -1,6 +1,8 @@
+import * as React from "react";
 import type { Kit } from "contentlayer/generated";
 import { NextSeo } from "next-seo";
 import { Box } from "components/Box";
+// import { Filters } from "components/Filters";
 import { PageHeader } from "components/PageHeader";
 import { ProductCard } from "components/ProductCard";
 import { allKits } from "contentlayer/generated";
@@ -18,14 +20,23 @@ export default function Kit({ kit }: { kit: Kit[] }) {
     <>
       <NextSeo
         title="Kit"
-        description=""
+        description="My current list of gear and tools."
         openGraph={{
           title: "Kit",
-          description: "",
+          description: "My current list of gear and tools.",
         }}
       />
-      <PageHeader heading="Kit" description="" />
+      <PageHeader
+        heading="Kit"
+        description="My current list of gear and tools."
+      />
       <Box as="section" paddingX="md" marginY="xxl">
+        {/* <Box maxWidth="md" marginX="auto" marginBottom="xxl">
+          <Filters>
+            <p>Test</p>
+            <p>Test</p>
+          </Filters>
+        </Box> */}
         <Box
           display="grid"
           gridTemplateColumns={{

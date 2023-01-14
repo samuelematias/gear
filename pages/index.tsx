@@ -1,6 +1,7 @@
 import { Box } from "components/Box";
 import { Entry } from "components/Entry";
 import { Heading } from "components/Heading";
+import { Feature } from "components/Feature";
 import { Marquee } from "components/Marquee";
 import { NewsletterForm } from "components/NewsletterForm";
 import { Spacer } from "components/Spacer";
@@ -29,6 +30,13 @@ export default function Home({ posts }: { posts: Post[] }) {
     <>
       <Box as="section" paddingX="md" marginY="xxl">
         <Box marginX="auto" maxWidth="lg">
+          <Feature
+            slug="/favorite-gear-2022"
+            image="/img/2022-favorite-gear-5.jpeg"
+            heading="Favorite Gear of 2022"
+            description="Five of my favorite pieces of new to me gear of 2022. Happy new year!"
+          />
+          <Spacer height="lg" />
           <Box as="header" textAlign="center" marginBottom="lg">
             <Heading>Favorite Brands</Heading>
           </Box>
