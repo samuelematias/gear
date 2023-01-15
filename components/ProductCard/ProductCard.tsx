@@ -5,9 +5,9 @@ import { Text } from "components/Text";
 import { Spacer } from "components/Spacer";
 import * as styles from "./ProductCard.css";
 
-const ProductCard = ({ name, brand }: Kit) => {
+const ProductCard = ({ link, name, brand }: Kit) => {
   return (
-    <a href="" className={styles.root}>
+    <a href={link} className={styles.root}>
       {/* <Image
         src="/img/benchmade-bugouts.jpeg"
         width={800}
