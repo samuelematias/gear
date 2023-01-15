@@ -21,6 +21,7 @@ export const info = style({
 });
 
 export const labelArrow = style({
+  color: themeVars.color.highlight,
   opacity: 0,
   transition: "opacity ease-in-out 0.2s",
   selectors: {

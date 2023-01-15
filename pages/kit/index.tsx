@@ -20,15 +20,15 @@ export default function Kit({ kit }: { kit: Kit[] }) {
     <>
       <NextSeo
         title="Kit"
-        description="My current list of gear and tools."
+        description="My current list of goto gear and tools."
         openGraph={{
           title: "Kit",
-          description: "My current list of gear and tools.",
+          description: "My current list of goto gear and tools.",
         }}
       />
       <PageHeader
         heading="Kit"
-        description="My current list of gear and tools."
+        description="My current list of goto gear and tools."
       />
       <Box as="section" paddingX="md" marginY="xxl">
         {/* <Box maxWidth="md" marginX="auto" marginBottom="xxl">
