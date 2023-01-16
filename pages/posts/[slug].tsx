@@ -54,7 +54,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
           },
           images: [
             {
-              url: `https://gear.alexcarpenter.me${post.thumbnail}`,
+              url: `https://gear.alexcarpenter.me/api/og?title=${post.title}`,
             },
           ],
         }}
