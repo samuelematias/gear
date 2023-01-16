@@ -21,7 +21,7 @@ export async function getStaticProps() {
   return {
     props: {
       feature: {
-        slug: "/favorite-gear-2022",
+        slug: "favorite-gear-2022",
         image: "/img/2022-favorite-gear-5.jpeg",
         heading: "Favorite Gear of 2022",
         description:
