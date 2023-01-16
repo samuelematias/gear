@@ -23,7 +23,7 @@ export default {
   additionalMetaTags: [
     {
       name: "google-site-verification",
-      content: "i_OZiD3QplY6BmhEXRrOUbhIxNu9oNtU_xUAkw67tB4",
+      content: "nfhrXCwuzTQjasCO0xSgZ0BE92C7e45vkEgs1a6AtII",
     },
   ],
 } as NextSeoProps;
