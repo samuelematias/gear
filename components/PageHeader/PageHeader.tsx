@@ -14,7 +14,7 @@ const PageHeader = ({ heading, description }: PageHeaderProps) => {
   return (
     <header className={styles.root}>
       <Box maxWidth="md" marginX="auto">
-        <Heading as="h1" fontSize="xxl">
+        <Heading as="h1" fontSize="xxxl">
           {heading}
         </Heading>
         {description ? (

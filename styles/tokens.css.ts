@@ -10,7 +10,8 @@ export const tokens = createGlobalTheme(":root", {
     md: "1rem",
     lg: "1.125rem",
     xl: "1.25rem",
-    xxl: "1.75rem",
+    xxl: "1.5rem",
+    xxxl: "1.75rem",
   },
   fontWeight: {
     bold: "700",
