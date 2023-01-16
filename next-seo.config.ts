@@ -20,4 +20,10 @@ export default {
       href: "/favicon.svg",
     },
   ],
+  additionalMetaTags: [
+    {
+      name: "google-site-verification",
+      content: "i_OZiD3QplY6BmhEXRrOUbhIxNu9oNtU_xUAkw67tB4",
+    },
+  ],
 } as NextSeoProps;
