@@ -69,7 +69,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
           </>
         ) : null}
         <Box maxWidth="md" marginX="auto">
-          <Heading as="h1" fontSize="xxl">
+          <Heading as="h1" fontSize="xxxl">
             {post.title}
           </Heading>
           <Meta
