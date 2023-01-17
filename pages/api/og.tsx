@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
@@ -14,8 +13,12 @@ export default async function handler(req: NextRequest) {
   const [fontData] = await Promise.all([font]);
   try {
     const { searchParams } = new URL(req.url);
-    const hasTitle = searchParams.has("title");
-    const title = hasTitle ? searchParams.get("title")?.slice(0, 100) : "Gear";
+    const title = searchParams.has("title")
+      ? searchParams.get("title")?.slice(0, 100)
+      : "Gear";
+    const description = searchParams.has("description")
+      ? searchParams.get("description")?.slice(0, 100)
+      : "gear.alexcarpenter.me";
 
     return new ImageResponse(
       (
@@ -62,7 +65,7 @@ export default async function handler(req: NextRequest) {
                 color: "#687076",
               }}
             >
-              gear.alexcarpenter.me
+              {description}
             </div>
           </div>
         </div>
