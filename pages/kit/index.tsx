@@ -1,4 +1,3 @@
-import * as React from "react";
 import type { Kit } from "contentlayer/generated";
 import { NextSeo } from "next-seo";
 import { Box } from "components/Box";
@@ -24,6 +23,11 @@ export default function Kit({ kit }: { kit: Kit[] }) {
         openGraph={{
           title: "Kit",
           description: "My current list of go to gear and tools.",
+          images: [
+            {
+              url: `https://gear.alexcarpenter.me/api/og?title=Kit&description=My current list of go to gear and tools.`,
+            },
+          ],
         }}
       />
       <PageHeader

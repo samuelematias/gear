@@ -28,6 +28,11 @@ export default function Home({ posts }: { posts: Post[] }) {
         title="Posts"
         openGraph={{
           title: "Posts",
+          images: [
+            {
+              url: `https://gear.alexcarpenter.me/api/og?title=Posts`,
+            },
+          ],
         }}
       />
       <PageHeader heading="Posts" />

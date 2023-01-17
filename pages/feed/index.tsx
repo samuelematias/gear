@@ -27,6 +27,11 @@ export default function Feed({ feed }: { feed: Feed[] }) {
           title: "Feed",
           description:
             "Short form updates, pocket dumps, industry news, and links.",
+          images: [
+            {
+              url: `https://gear.alexcarpenter.me/api/og?title=Feed&description=Short form updates, pocket dumps, industry news, and links.`,
+            },
+          ],
         }}
       />
       <PageHeader
