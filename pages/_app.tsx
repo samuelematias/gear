@@ -21,7 +21,16 @@ const composeProviders =
     }, children);
 
 const Providers = composeProviders(
-  [MotionConfig, { reducedMotion: "user" }],
+  [
+    MotionConfig,
+    {
+      reducedMotion: "user",
+      transition: {
+        ease: [0.32, 0.72, 0, 1],
+        duration: 0.7,
+      },
+    },
+  ],
   [
     ThemeProvider,
     {
