@@ -18,7 +18,10 @@ const Feature = ({ image, heading, description, slug }: FeatureProps) => {
       <Image className={styles.image} src={image} fill priority alt="" />
       <span className={styles.overlay} />
       <div className={styles.content}>
-        <Heading fontSize={{ sm: "xl", md: "xxl" }} className={styles.heading}>
+        <Heading
+          fontSize={{ sm: "xxl", md: "xxxl" }}
+          className={styles.heading}
+        >
           {heading}
         </Heading>
         <Spacer height="xs" />
