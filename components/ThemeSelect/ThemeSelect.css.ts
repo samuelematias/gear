@@ -7,6 +7,7 @@ export const root = style({
   position: "relative",
   display: "inline-flex",
   height: "2rem",
+  width: "min-content",
 });
 
 export const icon = style({
