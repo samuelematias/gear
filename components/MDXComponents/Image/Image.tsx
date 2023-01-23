@@ -39,7 +39,7 @@ const Image = ({
         objectFit="cover"
         alt={alt}
         style={{
-          borderRadius: 4,
+          borderRadius: 8,
         }}
       />
     </Box>
